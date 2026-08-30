@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Indiana HS Pickleball</title>
+<meta name="description" content="Indiana Interscholastic Pickleball Association — the first Indiana high school team pickleball club league and state championships.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<style>img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<style>
+  :root{
+    /* Indiana flag, night edition: darker navy field, gold torch & stars */
+    --navy:#0E1B38; --navy-2:#182A52; --green:#1E3A75; --green-deep:#152A57;
+    --gold:#EBAB21; --gold-deep:#8A6A0B;
+    --paper:#F5F6F9; --card:#FFFFFF; --line:#DDE1E9;
+    --ink:#1A2130; --ink-soft:#545E70; --chalk:#FAFBF7; --chalk-dim:#AAB6C9;
+    --hero:#0E1B38; --hero-2:#182A52;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#0A1120; --card:#121C31; --line:#25314B;
+      --ink:#E8EDF5; --ink-soft:#9FAEC9; --green:#8FA9EA; --green-deep:#A3BAF0;
+      --gold:#F2B838; --gold-deep:#F2B838;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#0A1120; --card:#121C31; --line:#25314B;
+    --ink:#E8EDF5; --ink-soft:#9FAEC9; --green:#8FA9EA; --green-deep:#A3BAF0;
+    --gold:#F2B838; --gold-deep:#F2B838;
+  }
+  /* keep the committed-dark bands on the darker navy in dark mode too */
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} *{animation:none!important;transition:none!important} }
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:'Source Sans 3',Segoe UI,Arial,sans-serif;font-size:17px;line-height:1.6}
+  h1,h2,h3,.disp{font-family:'Barlow Condensed','Arial Narrow',Arial,sans-serif;line-height:1.05;margin:0;text-wrap:balance}
+  a{color:var(--green-deep)}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+  /* draft ribbon */
+  .ribbon{background:var(--gold);color:#14265C;text-align:center;font-weight:700;font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;padding:6px 12px}
+
+  /* nav */
+  nav{position:sticky;top:0;z-index:50;background:var(--navy);border-bottom:3px solid var(--gold)}
+  nav .wrap{display:flex;align-items:baseline;gap:26px;row-gap:4px;flex-wrap:wrap;padding:13px 24px 14px}
+  .logo{font-family:'Barlow Condensed',Arial,sans-serif;font-weight:800;font-size:1.5rem;color:var(--chalk);text-decoration:none;letter-spacing:.02em;white-space:nowrap}
+  .logo span{color:var(--gold)}
+  nav .links{margin-left:auto;display:flex;gap:17px;row-gap:5px;flex-wrap:wrap;align-items:baseline;justify-content:flex-end}
+  nav .links a{color:var(--chalk-dim);text-decoration:none;font-size:.88rem;font-weight:600;letter-spacing:.02em;white-space:nowrap}
+  nav .links a:hover,nav .links a:focus{color:var(--chalk)}
+  nav a:focus-visible,.btn:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+  /* narrow screens: stack the bar deliberately — logo centered, links centered beneath */
+  @media (max-width: 920px){
+    nav .wrap{flex-direction:column;align-items:center;gap:6px;padding:11px 16px 12px}
+    nav .links{margin-left:0;justify-content:center;row-gap:4px}
+  }
+
+  /* hero — committed dark in both themes */
+  header{background:linear-gradient(180deg,var(--hero) 0%,var(--hero-2) 100%);color:var(--chalk);position:relative;overflow:hidden}
+  .court{position:absolute;inset:auto -40px -70px auto;width:420px;height:560px;border:2px solid rgba(232,165,17,.4);border-radius:14px;transform:rotate(8deg)}
+  .court::before{content:"";position:absolute;left:0;right:0;top:38%;border-top:2px solid rgba(232,165,17,.4)}
+  .court::after{content:"";position:absolute;top:0;bottom:0;left:50%;border-left:1px solid rgba(232,165,17,.25)}
+  .hero-in{position:relative;padding:76px 0 60px;max-width:760px}
+  .eyebrow{font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:1.05rem;line-height:1.4;color:var(--gold)}
+  h1{font-size:clamp(3rem,7.5vw,5.2rem);font-weight:800;text-transform:uppercase;letter-spacing:.01em;margin:.35em 0 .3em}
+  h1 em{font-style:normal;color:var(--gold)}
+  .lede{font-size:1.15rem;max-width:56ch;color:#D9E2E9;margin:0 0 28px}
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap}
+  .btn{display:inline-block;font-family:'Barlow Condensed',Arial,sans-serif;font-weight:700;font-size:1.15rem;letter-spacing:.05em;text-transform:uppercase;text-decoration:none;padding:11px 26px;border-radius:6px}
+  .btn-gold{background:var(--gold);color:#0E1B38}
+  .btn-gold:hover{background:#F5B71F}
+  .btn-ghost{border:2px solid var(--chalk-dim);color:var(--chalk)}
+  .btn-ghost:hover{border-color:var(--chalk);color:#fff}
+  .statbar{position:relative;border-top:1px solid rgba(250,251,247,.18);display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:0;padding:20px 0 26px}
+  .stat{padding:0 18px;border-left:1px solid rgba(250,251,247,.18)}
+  .stat:first-child{border-left:none;padding-left:0}
+  .stat b{display:block;font-family:'Barlow Condensed',Arial,sans-serif;font-size:2.3rem;font-weight:800;color:var(--gold);font-variant-numeric:tabular-nums}
+  .stat span{font-size:.85rem;color:var(--chalk-dim)}
+
+  /* sections */
+  section{padding:64px 0}
+  section:nth-of-type(even){background:var(--card)}
+  .sec-eyebrow{font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:.78rem;color:var(--green-deep)}
+  h2{font-size:clamp(2rem,4.5vw,2.9rem);font-weight:800;text-transform:uppercase;margin:.25em 0 .5em}
+  .sub{max-width:64ch;color:var(--ink-soft);margin:0 0 34px}
+  .grid{display:grid;gap:18px}
+  .g3{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+  .g2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+  .cardx{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:22px 22px 20px}
+  section:nth-of-type(even) .cardx{background:var(--paper)}
+  .cardx h3{font-size:1.45rem;font-weight:700;text-transform:uppercase;letter-spacing:.02em;margin-bottom:8px}
+  .cardx p{margin:0;font-size:.98rem;color:var(--ink-soft)}
+  .k{color:var(--green-deep);font-weight:700}
+
+  /* timeline */
+  .tl{list-style:none;margin:0;padding:0;display:grid;gap:0}
+  .tl li{display:grid;grid-template-columns:130px 1fr;gap:18px;padding:16px 0;border-bottom:1px dashed var(--line)}
+  .tl li:last-child{border-bottom:none}
+  .tl .when{font-family:'Barlow Condensed',Arial,sans-serif;font-weight:800;font-size:1.3rem;color:var(--green-deep);text-transform:uppercase;font-variant-numeric:tabular-nums}
+  .tl .what b{display:block;font-weight:700}
+  .tl .what span{color:var(--ink-soft);font-size:.95rem}
+  .tl .final .when{color:var(--gold-deep)}
+
+  /* clubs table */
+  .clubs{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
+  .club{border:1px solid var(--line);border-radius:8px;padding:12px 14px;background:var(--card);display:flex;justify-content:space-between;gap:10px;align-items:baseline}
+  section:nth-of-type(even) .club{background:var(--paper)}
+  .club b{font-size:.95rem}
+  .club small{color:var(--ink-soft);white-space:nowrap;font-variant-numeric:tabular-nums}
+
+  /* cost */
+  .versus{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-bottom:26px}
+  .vbox{border-radius:10px;padding:26px;text-align:center;border:1px solid var(--line);background:var(--card)}
+  .vbox.win{border:2px solid var(--green);}
+  .vbox .num{font-family:'Barlow Condensed',Arial,sans-serif;font-size:3.6rem;font-weight:800;font-variant-numeric:tabular-nums}
+  .vbox.lose .num{color:var(--ink-soft)}
+  .vbox.win .num{color:var(--green-deep)}
+  .vbox p{margin:4px 0 0;font-size:.92rem;color:var(--ink-soft)}
+
+  /* steps */
+  .steps{counter-reset:s;display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+  .step{counter-increment:s;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:20px}
+  section:nth-of-type(even) .step{background:var(--paper)}
+  .step::before{content:counter(s);display:inline-block;font-family:'Barlow Condensed',Arial,sans-serif;font-weight:800;font-size:1.3rem;background:var(--green);color:#fff;width:38px;height:38px;border-radius:50%;text-align:center;line-height:38px;margin-bottom:10px}
+  .step b{display:block;font-size:1.05rem;margin-bottom:4px}
+  .step p{margin:0;font-size:.93rem;color:var(--ink-soft)}
+
+  /* partners band — committed dark */
+  .partners{background:var(--navy);color:var(--chalk)}
+  .partners h2{color:var(--chalk)}
+  .partners .sec-eyebrow{color:var(--gold)}
+  .partners .sub{color:var(--chalk-dim)}
+  .partners .cardx{background:var(--navy-2);border-color:rgba(250,251,247,.15)}
+  .partners .cardx h3{color:var(--gold)}
+  .partners .cardx p{color:#C9D5DE}
+  .partners a:not(.btn){color:var(--gold)}
+
+  /* board cards */
+  .board{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:8px}
+  .avatar{width:84px;height:84px;border-radius:50%;background:var(--navy);color:var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',Arial,sans-serif;font-weight:800;font-size:1.7rem;margin-bottom:14px}
+  .role{color:var(--green-deep);font-weight:700;font-size:.9rem;text-transform:uppercase;letter-spacing:.04em}
+  .bio-note{font-style:italic}
+  .gov{border-left:4px solid var(--gold);padding:14px 18px;background:var(--card);border-radius:0 8px 8px 0;margin-top:30px;font-size:.98rem}
+  section:nth-of-type(even) .gov{background:var(--paper)}
+
+  footer{background:var(--navy);color:var(--chalk-dim);padding:34px 0;border-top:3px solid var(--gold);font-size:.9rem}
+  footer .wrap{display:grid;gap:8px}
+  footer b{color:var(--chalk)}
+  footer a{color:var(--gold)}
+  .contact-line{font-size:1.05rem}
+</style>
+
+<div class="ribbon">Draft preview for IIPA review — not yet public</div>
+
+<nav aria-label="Main">
+  <div class="wrap">
+    <a class="logo" href="#top">INDIANA HS <span>PICKLEBALL</span></a>
+    <div class="links">
+      <a href="#how">How It Works</a>
+      <a href="#season">The Season</a>
+      <a href="#clubs">Home Clubs</a>
+      <a href="#schools">For Schools</a>
+      <a href="#partners">Partners</a>
+      <a href="#about">About</a>
+    </div>
+  </div>
+</nav>
+
+<header id="top">
+  <div class="court" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="hero-in">
+      <div class="eyebrow">Indiana Interscholastic<br>Pickleball Association</div>
+      <h1>An Indiana high school will make history <em>this winter.</em></h1>
+      <p class="lede">The first-ever Indiana High School Team Pickleball Club League — which becomes the road to the first Indiana High School Team Pickleball State Championship in the sport's history. Coed teams. Sixteen indoor home pickleball clubs statewide. All it takes is just two girls and two boys to put YOUR school on this historic path!</p>
+      <div class="cta-row">
+        <a class="btn btn-gold" href="mailto:IIPAssociation2026@gmail.com?subject=Register%20our%20school">Register Your School</a>
+        <a class="btn btn-ghost" href="#partners">Partner With Us</a>
+      </div>
+    </div>
+    <div class="statbar">
+      <div class="stat"><b>411</b><span>Indiana high schools invited</span></div>
+      <div class="stat"><b>16</b><span>regional home clubs</span></div>
+      <div class="stat"><b>165</b><span>indoor courts, statewide</span></div>
+      <div class="stat"><b>NOV 17</b><span>first official day of Season One</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="how">
+  <div class="wrap">
+    <div class="sec-eyebrow">How It Works</div>
+    <h2>Team pickleball, the way the colleges play it</h2>
+    <p class="sub">Matches use the coed collegiate team format — five events, each worth one team point. First team to three points wins, but all five events are usually played to maximize participation. Plan about 90 minutes per team match.</p>
+    <div class="grid g3">
+      <div class="cardx"><h3>2 Girls + 2 Boys</h3><p>That's all it takes to field a team. Rosters carry up to 6 players in the regular season and up to 8 in tournament play — enrolled students, grades 9–12, certified by their school. Schools may field more than one team until the Club Championships begin; from there, one team of up to 8 players through the State Finals.</p></div>
+      <div class="cardx"><h3>Five Events Per Match</h3><p>Girls Doubles, Boys Doubles, Mixed Doubles #1 and #2 — then, when it's tied 2–2, the <span class="k">HeartBreaker</span>: a rotating singles shoot-out tie-breaker that is the most exciting finish in team pickleball.</p></div>
+      <div class="cardx"><h3>Zero Conflict With School Sports</h3><p>The season starts after every IHSAA winter sport begins and ends before the first spring sport starts. Your basketball, swimming, and wrestling programs never compete for athletes.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="season">
+  <div class="wrap">
+    <div class="sec-eyebrow">Season One · 2026–27</div>
+    <h2>Twelve weeks. One champion.</h2>
+    <ul class="tl">
+      <li><div class="when">Nov 17</div><div class="what"><b>Season opens</b><span>Practices begin at 16 home clubs statewide</span></div></li>
+      <li><div class="when">Nov 21</div><div class="what"><b>First match Saturday</b><span>Two team matches every Saturday at your home club, through mid-January. Some clubs with lots of teams may choose to run a bracketed tournament the first couple of weeks to learn the ability levels of the teams.</span></div></li>
+      <li><div class="when">Holiday Break</div><div class="what"><b>Holiday Tournament</b><span>TBD by the home clubs. Team pickleball individual tournament events of Girls Doubles, Boys Doubles, Mixed Doubles, and HeartBreaker Singles might be played.</span></div></li>
+      <li><div class="when">Jan 23–30</div><div class="what"><b>Regional Club Championships</b><span>Regular-season results seed the bracket; Gold, Silver &amp; Bronze will be competed for at all 16 clubs. Regional Club Championships must include at a minimum the top 8 teams from the regular season.</span></div></li>
+      <li><div class="when">Feb 5–6</div><div class="what"><b>Road to State</b><span>All 16 Golds earn byes; the 32 Silvers and Bronzes play one play-in round to earn the right to face the 16 Golds.</span></div></li>
+      <li class="final"><div class="when">Feb 12–13</div><div class="what"><b>The Indiana State Championships</b><span>Drew Brees Championship Court, The Picklr Noblesville — the first state champion in Indiana high school pickleball history will be crowned.</span></div></li>
+    </ul>
+  </div>
+</section>
+
+<section id="clubs">
+  <div class="wrap">
+    <div class="sec-eyebrow">Find Your Home Club</div>
+    <h2>Sixteen regions. The whole state plays.</h2>
+    <p class="sub">Every school is assigned a professional indoor facility as its home club — for practices, special clinics and events, match days, and its Regional Club Championships. No weather, no waiting for a gym.</p>
+    <div class="clubs">
+      <div class="club"><b>YMCA Sports Center</b><small>Crown Point · 12 courts</small></div>
+      <div class="club"><b>H² Pickleball</b><small>Mishawaka · 7 courts</small></div>
+      <div class="club"><b>Pickle Haus</b><small>Middlebury · 6 courts</small></div>
+      <div class="club"><b>Power Courts</b><small>Ft. Wayne · 21 courts</small></div>
+      <div class="club"><b>The Picklr Noblesville</b><small>Indy NE · 19 courts</small></div>
+      <div class="club"><b>3rd Shot Pickleball</b><small>Indy NW · 15 courts</small></div>
+      <div class="club"><b>IPC East</b><small>Indy East · 9 courts</small></div>
+      <div class="club"><b>The Picklr Avon</b><small>Indy West · 12 courts</small></div>
+      <div class="club"><b>The Pickle Greenwood</b><small>Indy South · 12 courts</small></div>
+      <div class="club"><b>First Serve Muncie</b><small>Muncie · 4 courts</small></div>
+      <div class="club"><b>Dill Dinkers</b><small>SE Indiana · 12 courts</small></div>
+      <div class="club"><b>The Crimson Pickle</b><small>Bloomington · 8 courts</small></div>
+      <div class="club"><b>Tipton Lakes Athletic Club</b><small>Columbus · 8 courts</small></div>
+      <div class="club"><b>3rd Shot Pickleball</b><small>Evansville · 8 courts</small></div>
+      <div class="club"><b>Pickleball Euphoria</b><small>Clarksville · 10 courts</small></div>
+      <div class="club"><b>Region 16</b><small>Announcing soon</small></div>
+    </div>
+  </div>
+</section>
+
+<section id="cost">
+  <div class="wrap">
+    <div class="sec-eyebrow">Built For Access</div>
+    <h2>A state championship season for the cost of one travel weekend</h2>
+    <div class="versus">
+      <div class="vbox lose"><div class="num">$1,016</div><p>what the average U.S. family now pays for one child's primary sport, per year — up 46% in five years <em>(<a href="https://projectplay.org/news/2025/2/24/project-play-survey-family-spending-on-youth-sports-rises-46-over-five-years" target="_blank" rel="noopener">Aspen Institute Project Play, 2024</a>)</em></p></div>
+      <div class="vbox win"><div class="num">≈&nbsp;$120*</div><p>estimated cost per athlete for a full 12-week league season, including the road to the State Championships — final fees announced with registration this fall</p><p style="margin-top:12px;font-size:.78rem;color:var(--ink-soft)">*final cost per athlete varies based on many factors including sponsorships, club court time fees, league fees, practice court time fees, and others.</p></div>
+    </div>
+    <p class="sub" style="margin-bottom:0">Financial hardship waivers or discounts <span class="k">might be available</span>, based on the volume of contributions to the Every Kid Plays Fund. Homeschool students are actively welcomed, and we're working with partners on adaptive play so every Hoosier kid gets a paddle in hand.</p>
+  </div>
+</section>
+
+<section id="schools">
+  <div class="wrap">
+    <div class="sec-eyebrow">For Athletic Directors &amp; Principals</div>
+    <h2>Three steps to making history</h2>
+    <div class="steps">
+      <div class="step"><b>Start (or name) your Pickleball Club</b><p>An existing club counts; a new one is easy and we'll help you form it. Just email us and we will gladly answer all your questions or get on a call with you. Your home facility offers practice court time, coaching help, and youth programming. They are there for you. That is your home club.</p></div>
+      <div class="step"><b>Certify a coach and your players</b><p>An adult coach certified by your school attends every match. Players are enrolled students, grades 9–12, certified by the school.</p></div>
+      <div class="step"><b>Register your school</b><p>Email us and we'll take it from there — home club assignment, schedule, and everything your team needs before the first serve the week of November 17.</p></div>
+    </div>
+    <p style="margin-top:30px"><a class="btn btn-gold" href="mailto:IIPAssociation2026@gmail.com?subject=Register%20our%20school">Email Us to Register</a></p>
+  </div>
+</section>
+
+<section id="partners" class="partners">
+  <div class="wrap">
+    <div class="sec-eyebrow">Sponsors &amp; Partners</div>
+    <h2>Put your name on a first</h2>
+    <p class="sub">The <a href="https://sfia.org/resources/sfia-releases-2026-pickleball-single-sport-report-team-sports-reports-to-follow/" target="_blank" rel="noopener">fastest-growing sport in America</a> is coming to Indiana's schools, and Season One partners will be part of its history forever — while funding something real: youth activity, access for every income, and a sport kids keep for life.</p>
+    <div class="grid g3">
+      <div class="cardx"><h3>Title Partnership</h3><p>Name the State Championships and the perpetual championship trophy. One partner, once ever.</p></div>
+      <div class="cardx"><h3>Every Kid Plays Fund</h3><p>Underwrite hardship waivers and equipment so no school is priced out — visible, story-rich community investment.</p></div>
+      <div class="cardx"><h3>Regional &amp; Program Sponsors</h3><p>Name a region's season, or adopt a program: officials certification, coaches education, adaptive pickleball, broadcast honors.</p></div>
+    </div>
+    <p style="margin-top:28px"><a class="btn btn-gold" href="mailto:IIPAssociation2026@gmail.com?subject=Partnership%20inquiry">Start the Conversation</a></p>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="sec-eyebrow">Who We Are</div>
+    <h2>The Indiana Interscholastic Pickleball Association</h2>
+    <p class="sub">Our mission: to foster a lifelong love of pickleball among Indiana's youth — promoting physical fitness, healthy competition, sportsmanship, scholarship, and community through the <a href="https://sfia.org/resources/sfia-releases-2026-pickleball-single-sport-report-team-sports-reports-to-follow/" target="_blank" rel="noopener">fastest-growing sport in America</a>. We believe every Indiana student deserves access to the game, regardless of income, ability, or how they go to school — and that a sport learned at 15 can keep a Hoosier healthy at 85.</p>
+    <div class="board">
+      <div class="cardx">
+        <div class="avatar" aria-hidden="true">JR</div>
+        <h3>J.R. Billman</h3>
+        <div class="role">Founder &amp; CEO · Chairman of the Board</div>
+        <p class="bio-note">Bio and photo coming soon.</p>
+      </div>
+      <div class="cardx">
+        <div class="avatar" aria-hidden="true">RF</div>
+        <h3>Richard X. Fingerbutt</h3>
+        <div class="role">Vice-President &amp; Treasurer · Vice-Chairman</div>
+        <p class="bio-note">Bio and photo coming soon.</p>
+      </div>
+      <div class="cardx">
+        <div class="avatar" aria-hidden="true">AB</div>
+        <h3>Austin M. Bowling</h3>
+        <div class="role">Secretary &amp; Chief Compliance Officer · Board Secretary</div>
+        <p class="bio-note">Bio and photo coming soon.</p>
+      </div>
+    </div>
+    <div class="gov">The Indiana Interscholastic Pickleball Association, Ltd. was incorporated as an Indiana nonprofit corporation, with Articles of Incorporation approved by the Indiana Secretary of State on <b>July 13, 2026</b>. Federal recognition as a 501(c)(3) tax-exempt organization is currently underway with the IRS.
+      <br><br>With seven projects currently in the master plan, the first two — The Indiana High School Team Pickleball Club League and The Indiana High School Team Pickleball State Championships — will be our flagship programs. And it's not just going to be about the competition, although that is inevitable. Yes, we will name, with our Indoor Club partners around the great Hoosier state, 1st, 2nd, 3rd Team and Honorable Mention All-State players. Oh yes, there will be an Indiana All-Star Team that will have a special summer event planned that will be an opportunity of a lifetime. And of course — of course — there will be named the first ever Mr. Pickleball and Miss Pickleball in the state of Indiana. This just goes without saying.
+      <br><br>But just as important as that, several amazing outreach programs, separate from the competition, will be included in the program. You will be amazed at how we will challenge the best and brightest in Hoosier High School Pickleball Clubs around the state to use their ingenuity and innovation to create something that has never been tried before. <b>"Kids Playing for Kids."</b>
+      <br><br><b>Welcome aboard. We hope you enjoy the ride.</b></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="contact-line"><b>Indiana High School Team Pickleball</b> — the official Club League &amp; State Championships of the <b>Indiana Interscholastic Pickleball Association, Ltd.</b>, an Indiana nonprofit corporation (IRS 501(c)(3) application in process).</div>
+    <div>The Association operates under adopted bylaws with conflict-of-interest, whistleblower-protection, and document-retention policies. <b>Governance documents are available on request.</b></div>
+    <div>Contact: <a href="mailto:IIPAssociation2026@gmail.com">IIPAssociation2026@gmail.com</a> &nbsp;·&nbsp; J.R. Billman, Founder &amp; CEO</div>
+    <div>Connect. Compete. Have Fun. — sportsmanship and fair play is at the heart of everything we do.</div>
+  </div>
+</footer>
+</body>
+</html>
