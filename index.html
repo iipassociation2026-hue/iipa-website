@@ -64,7 +64,9 @@
   .court{position:absolute;inset:auto -40px -70px auto;width:420px;height:560px;border:2px solid rgba(232,165,17,.4);border-radius:14px;transform:rotate(8deg)}
   .court::before{content:"";position:absolute;left:0;right:0;top:38%;border-top:2px solid rgba(232,165,17,.4)}
   .court::after{content:"";position:absolute;top:0;bottom:0;left:50%;border-left:1px solid rgba(232,165,17,.25)}
-  .hero-in{position:relative;padding:76px 0 60px;max-width:760px}
+  .hero-in{position:relative;padding:40px 0 60px;max-width:760px}
+  .eyebrow-row{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+  .hero-mark{height:72px;width:auto}
   .eyebrow{font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:1.05rem;line-height:1.4;color:var(--gold)}
   h1{font-size:clamp(3rem,7.5vw,5.2rem);font-weight:800;text-transform:uppercase;letter-spacing:.01em;margin:.35em 0 .3em}
   h1 em{font-style:normal;color:var(--gold)}
@@ -75,9 +77,9 @@
   .btn-gold:hover{background:#F5B71F}
   .btn-ghost{border:2px solid var(--chalk-dim);color:var(--chalk)}
   .btn-ghost:hover{border-color:var(--chalk);color:#fff}
-  .statbar{position:relative;border-top:1px solid rgba(250,251,247,.18);display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:0;padding:20px 0 26px}
-  .stat{padding:0 18px;border-left:1px solid rgba(250,251,247,.18)}
-  .stat:first-child{border-left:none;padding-left:0}
+  .statbar{position:relative;border-top:1px solid rgba(250,251,247,.18);display:flex;flex-wrap:wrap;justify-content:center;row-gap:16px;padding:20px 0 26px;text-align:center}
+  .stat{flex:1 1 170px;max-width:216px;padding:0 14px;border-left:1px solid rgba(250,251,247,.18)}
+  .stat:first-child{border-left:none}
   .stat b{display:block;font-family:'Barlow Condensed',Arial,sans-serif;font-size:2.3rem;font-weight:800;color:var(--gold);font-variant-numeric:tabular-nums}
   .stat span{font-size:.85rem;color:var(--chalk-dim)}
 
@@ -112,6 +114,61 @@
   .club b{font-size:.95rem}
   .club small{color:var(--ink-soft);white-space:nowrap;font-variant-numeric:tabular-nums}
 
+  /* scores & standings */
+  .region-pills{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 26px}
+  .pill{font-family:'Barlow Condensed',Arial,sans-serif;font-weight:700;font-size:1rem;letter-spacing:.03em;text-transform:uppercase;padding:7px 14px;border-radius:999px;border:1.5px solid var(--line);background:var(--card);color:var(--ink-soft);cursor:pointer}
+  .pill:hover{border-color:var(--green)}
+  .pill.active{background:var(--navy);border-color:var(--navy);color:var(--gold)}
+  .score-panel h3{font-size:1.5rem;margin:0 0 4px}
+  .score-panel .venue{color:var(--ink-soft);font-size:.95rem;margin:0 0 22px}
+  .score-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:18px}
+  .score-cols .score-box:first-child{grid-column:span 1}
+  @media (min-width:900px){.score-cols{grid-template-columns:3fr 2fr}}
+  .score-box{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:20px}
+  section:nth-of-type(even) .score-box{background:var(--paper)}
+  .score-box h4{font-family:'Barlow Condensed',Arial,sans-serif;font-size:1.2rem;font-weight:800;text-transform:uppercase;letter-spacing:.03em;margin:0 0 12px;color:var(--green-deep)}
+  .empty-note{color:var(--ink-soft);font-size:.95rem;margin:0;font-style:italic}
+  table.stand{width:100%;border-collapse:collapse;font-size:.95rem}
+  table.stand th{font-family:'Barlow Condensed',Arial,sans-serif;text-transform:uppercase;letter-spacing:.04em;font-size:.85rem;color:var(--ink-soft);text-align:left;padding:6px 8px;border-bottom:2px solid var(--line)}
+  table.stand th.num, table.stand td.num{text-align:center;font-variant-numeric:tabular-nums}
+  table.stand td{padding:7px 8px;border-bottom:1px dashed var(--line)}
+  .bug{background:var(--navy);border-radius:10px;overflow:hidden;margin:10px 0 14px;box-shadow:0 2px 8px rgba(14,27,56,.18);overflow-x:auto}
+  .bug table{width:100%;border-collapse:collapse;min-width:520px}
+  .bug th{font-family:'Barlow Condensed',Arial,sans-serif;font-weight:700;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--chalk-dim);padding:7px 6px 4px;text-align:center;border-bottom:1px solid rgba(250,251,247,.18)}
+  .bug th.bteam{text-align:left;padding-left:14px}
+  .bug th.bfin{color:#F5B71F}
+  .bug td{padding:8px 6px;text-align:center;font-family:'Barlow Condensed',Arial,sans-serif;font-weight:700;font-size:1.35rem;color:var(--chalk);font-variant-numeric:tabular-nums;width:10%}
+  .bug td.bteam{width:32%;text-align:left;padding-left:14px;font-size:1.1rem;letter-spacing:.02em;text-transform:uppercase}
+  .bug tr.btop td{border-bottom:2px solid rgba(250,251,247,.35)}
+  .bug td.bfin{background:rgba(245,183,31,.12);font-size:1.55rem}
+  .bug tr.bwin td.bteam, .bug tr.bwin td.bfin{color:#F5B71F}
+  .bug td.evwin{color:#F5B71F}
+  .bug td.dnf{font-size:.9rem;font-weight:600;color:var(--chalk-dim);text-transform:lowercase;letter-spacing:.05em}
+  .stand-note{margin:12px 0 0;font-size:.78rem;color:var(--ink-soft);line-height:1.5}
+  .score-box.stand-box, section:nth-of-type(even) .score-box.stand-box{background:#FFFFFF;border-color:var(--line)}
+  .score-cols .stand-box{align-self:start}
+  .stand-box h4{background:var(--navy);color:#FFFFFF;border:2px solid var(--gold);border-radius:8px;padding:10px 12px;text-align:center;font-size:1.55rem;letter-spacing:.14em;margin-bottom:16px}
+  .stand-box h4 .hd-region{display:block;font-size:.95rem;letter-spacing:.24em;color:var(--gold);margin-top:3px}
+  .stand-box table.stand th{border-bottom:2px solid var(--gold)}
+  .stand-box tr.lead td{font-weight:700}
+  .rank{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;font-family:'Barlow Condensed',Arial,sans-serif;font-weight:800;font-size:.85rem;color:#fff;background:var(--chalk-dim)}
+  .rank.g{background:#EBAB21;color:#0E1B38}
+  .rank.s{background:#9EA7B3;color:#0E1B38}
+  .rank.b{background:#C77B3B;color:#fff}
+  .rank.q{background:transparent;border:1.5px solid var(--ink);color:var(--ink)}
+  .rank.plain{background:transparent;color:var(--ink-soft)}
+  @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .score-box.stand-box{background:var(--card)} }
+  :root[data-theme="dark"] .score-box.stand-box{background:var(--card)}
+  .week-hd{font-family:'Barlow Condensed',Arial,sans-serif;font-weight:800;font-size:1.15rem;text-transform:uppercase;letter-spacing:.03em;color:var(--green-deep);margin:16px 0 2px}
+
+  /* press box */
+  .pb-grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+  .pb-tag{display:inline-block;font-family:'Barlow Condensed',Arial,sans-serif;font-weight:700;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;padding:3px 10px;border-radius:999px;background:#0E1B38;color:#EBAB21;margin-bottom:10px}
+  .pb-tag.tv{background:#EBAB21;color:#0E1B38}
+  .pb-byline{color:var(--ink-soft);font-size:.85rem;margin:4px 0 10px}
+  .pb-watch{display:inline-block;margin-top:12px;font-family:'Barlow Condensed',Arial,sans-serif;font-weight:700;font-size:1rem;letter-spacing:.05em;text-transform:uppercase;border:2px solid var(--green-deep);border-radius:6px;padding:7px 16px;color:var(--green-deep);text-decoration:none}
+  .pb-note{margin-top:22px;font-size:.85rem;color:var(--ink-soft);font-style:italic}
+
   /* cost */
   .versus{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-bottom:26px}
   .vbox{border-radius:10px;padding:26px;text-align:center;border:1px solid var(--line);background:var(--card)}
@@ -130,14 +187,15 @@
   .step p{margin:0;font-size:.93rem;color:var(--ink-soft)}
 
   /* partners band — committed dark */
-  .partners{background:var(--navy);color:var(--chalk)}
-  .partners h2{color:var(--chalk)}
-  .partners .sec-eyebrow{color:var(--gold)}
-  .partners .sub{color:var(--chalk-dim)}
-  .partners .cardx{background:var(--navy-2);border-color:rgba(250,251,247,.15)}
-  .partners .cardx h3{color:var(--gold)}
-  .partners .cardx p{color:#C9D5DE}
-  .partners a:not(.btn){color:var(--gold)}
+  section.partners{background:var(--navy);color:var(--chalk)}
+  section.partners h2{color:var(--chalk)}
+  section.partners .sec-eyebrow{color:#F5B71F}
+  section.partners .sub{color:#D9E2EF}
+  section.partners .cardx{background:var(--navy-2);border-color:rgba(250,251,247,.15)}
+  section.partners .cardx h3{color:#F5B71F;text-align:center;font-size:1.5rem;margin:0}
+  section.partners .cardx p{color:#E7EDF7}
+  section.partners a:not(.btn){color:#F5B71F}
+  @media (min-width:840px){section.partners .grid .cardx:nth-child(10){grid-column:2}}
 
   /* board cards */
   .board{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:8px}
@@ -147,11 +205,30 @@
   .gov{border-left:4px solid var(--gold);padding:14px 18px;background:var(--card);border-radius:0 8px 8px 0;margin-top:30px;font-size:.98rem}
   section:nth-of-type(even) .gov{background:var(--paper)}
 
+  /* pro shop */
+  .shop-code{display:inline-block;font-family:'Barlow Condensed',Arial,sans-serif;font-weight:800;font-size:1.15rem;letter-spacing:.12em;border:2px dashed var(--gold-deep);border-radius:6px;padding:5px 14px;color:var(--gold-deep);margin:12px 0 4px}
+  .shop-save{font-weight:700;color:var(--green-deep)}
+  .shop-btn{display:inline-block;margin-top:12px;font-family:'Barlow Condensed',Arial,sans-serif;font-weight:700;font-size:1rem;letter-spacing:.05em;text-transform:uppercase;background:var(--navy);color:#FAFBF7;border-radius:6px;padding:8px 18px;text-decoration:none}
+  .shop-logo{height:64px;border:2px dashed var(--line);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--ink-soft);font-family:'Barlow Condensed',Arial,sans-serif;font-weight:800;font-size:1.1rem;letter-spacing:.06em;margin-bottom:14px}
+  .shop-disclosure{margin-top:24px;font-size:.8rem;color:var(--ink-soft);font-style:italic;max-width:72ch}
+
+  /* official partners band */
+  .affil{background:var(--card);border-top:1px solid var(--line);padding:42px 0 48px;text-align:center}
+  .affil .sec-eyebrow{display:block}
+  .affil-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:28px;margin-top:26px}
+  .affil-slot{width:250px}
+  .affil-logo{height:82px;border:2px dashed var(--line);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--ink-soft);font-family:'Barlow Condensed',Arial,sans-serif;font-weight:800;font-size:1.25rem;letter-spacing:.06em}
+  .affil-cap{font-size:.82rem;color:var(--ink-soft);margin-top:9px;line-height:1.45}
+  .affil-cap b{color:var(--ink)}
+  .affil-note{margin-top:26px;font-size:.85rem;color:var(--ink-soft);font-style:italic}
+
   footer{background:var(--navy);color:var(--chalk-dim);padding:34px 0;border-top:3px solid var(--gold);font-size:.9rem}
   footer .wrap{display:grid;gap:8px}
   footer b{color:var(--chalk)}
   footer a{color:var(--gold)}
   .contact-line{font-size:1.05rem}
+  .org-name{white-space:nowrap}
+  @media (max-width:640px){ .org-name{white-space:normal} }
 </style>
 
 <div class="ribbon">Draft preview for IIPA review — not yet public</div>
@@ -163,6 +240,9 @@
       <a href="#how">How It Works</a>
       <a href="#season">The Season</a>
       <a href="#clubs">Home Clubs</a>
+      <a href="#scores">Scores</a>
+      <a href="#pressbox">Press Box</a>
+      <a href="#proshop">Pro Shop</a>
       <a href="#schools">For Schools</a>
       <a href="#partners">Partners</a>
       <a href="#about">About</a>
@@ -174,19 +254,20 @@
   <div class="court" aria-hidden="true"></div>
   <div class="wrap">
     <div class="hero-in">
-      <div class="eyebrow">Indiana Interscholastic<br>Pickleball Association</div>
+      <div class="eyebrow-row"><div class="eyebrow">Indiana Interscholastic<br>Pickleball Association</div><img class="hero-mark" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASYAAADlCAYAAAD+z1p0AAAlWUlEQVR42u2dz2sby5bHvzZPAq2MF1nNItZ6MBHiLR83jjezE/GIbAYG2+8PMHq+bztE4TG7uRqhP2AS8+Btgq6N/gDHCbMcjIK4mweDnNlmYbISSGBm0afkUrt/VHVXd1d1nwPCiS21uruqP3XOqfNjCyzWynK12AHQBHBAryaAOf35jl7fAFzXa40ffMdYyiJbfAusg9ERgGMAHc2PzgD067XGJd9FFgYTiykgtQDcGjrceb3WGPJdZWEwsdgAJL/ssonH4qJs8y0oFEpXGUIJAO6Xq0WP7zQLa0wsRWtJbNqxsMbEog2lXs5QAoABa04srDGxREFpkPDjM+nf+wmP0eVdOxYGE4sMpa+aQJkA6AOYhzmwpTinPtTDCxhOLAwmBtJiB8C9JpCOdXfT6HsuFAHVrtcaUx4dFgZTNaF0BGCcp6ml4VjnUAIWa4Wd39lBqacBpVG91tg2YWKRJtTGpk8qSO55lFhYY6oWlHT8SZn5fFTOo15r8OLEwmAqOZB0/UmZm1PL1eIh5i2Teq3xmkePhU25ckLpSANKwnTLw8ezG/P3znK1GPIIsrDGVD4oDQGcFW26pdTkeKeOhcFUIihdQT2GqLCdMEU48U4dC4PJcSDp+JOs8OMohhIwnFgKF/YxJX/AdfxJr204bzLVujFv4zACFgaTg1AaQj0Jt12vNXo2nT/5t0Yx1/jAI83Cppw7ULqCoj/J9vggBYf9rF5rvOBRZ2Ew2W26qWpJzjzQCgGYXMeJhU05Sx/eIw0ojQSUlqvFDjnIrRUFgA44xomFwWSnuaOa79YV/iTSsODC7paCyXlGcGZhYVPOATNHlt16rfGDNKRTADcuBSsqmqocgMnCYCrwIU2U70YP94FrUNKBEyf8srApV8zDqZPvNhP5bvQ5Z6FE0JkiJsaJwwhYWGPKH0pDqOe7rXerJOfwhzKYOip1ybPQnHwbBU16CXlOP/d8H9vT/Jq7iP9/o59z6Xdzul6OhGcwFWK6fYFm/SSplC3gteaeluieXCE6Xks5xSYEOM8JKmcO3ZYZgE8EsxsBLoYWgymLB7AFvVZKawcwPbxAgvrcjtybOOf/EzgRhA4dBU9amRCwbhhYDKY0D55uPW7Zyd0nFf91ye/Rg8LD2ETydlJlF6FlfQZwzbBiMKU1VTYmlxQ0KWCWqJOJgybuKZL3wWMJlxGZhN9Iu5ryLakwmBKEAoykoEkBsxmAn8oEJak/XRPAsQa0WcxpVu8BvGetqmJgSuBP8u+8nZVFU5JAdEBa0b5DD/CctI07eH6sO+nvQTtrqtIM+N1L+rmXs8k6gbexck0ug8rBqhJgSuBPkp3cwgnspKbk04Zewl6HtB863yTAbICm4CqgfoiJfz8n0GcBsHNUzKleejClcHLLZp8zUPLtjB1YZJYJ8NwgImaoaPgYAhfwNDTilSFgjQB8KDukSg0mXSiJwEGf2WcllJarxY4EUPEgnFiiEYkVHlGmlco99Vdo0BkH8Vlbxs43VsKfl0bDOofD2QaVBJOmT2kdkxMAs10boQS7fUSjpJU7fSA6lMwkYDPSe0/hcHe+n5C0NQHMxNDMEFa6Wu4MXpDvZVme31KCSRNK8s7b0KdxWJdRn8A0NWmKiZgcKJxDF+S8zcG8yep6+wjwc+XQpFReeHTN8VKYemUFk2qy6brHW0CksxVQKjCeSOwMzSNMsio3LpBTVL7J2pdJIKQw1dc7ey4CqnRg0gieFDlvQdpVt0i1mM5JZxIaMb9IG4oCkcu5bijgXhqHgm9zQ9WMP4djMVKlApOGmbMrlSvxv7+wHnAJYq1MgWi90vtW6CSmBEu4WXidgTYlxklFo+664ocqG5hiTThp5y0MYoWYcJoVM5OaZjcID0Jsaq7CLGbMZGO+IEWz3wlHeWnApGLCSVDqhQzeKK8+cN8/Nl8/ezO/SgNZRRVeBpEcDAjWhqwC1Q0MBVFK5l7UDl8mWhyDSdMEkqA0DPONZF069vvH5hjAk8L+z97Mt2UgSef6kHCSy05rAaQT2L0LxuIzs9NqNZKpd4Jof6B1u89lAVPcAyx8SsOIAcqkh9r3j80/Afgl4i2DZ2/mf/7+sfkawK8ypBSvTySA3kgwcjEPjiV8oTk2qEX1Q+bECMBbW7Qn58GkoC2167XGNK5kbBba0vePzRmAf1R468/085cgMAXASWxVv5V+Z1PkN0s2knp3TWqaEbZoWdHktAxginIaT+q1xmsFeBndiSMt6Q8A/grgL4pwCpQIULXAZUqqDqkbpPBJ0Ry6CAMUCgwxcBpMcfWV6rXGtmINJmOrBPmR5gD+Rr/6n7THFHAirakN9e1hlmqYehdJ/VGSiRe0Q53bZpBffuf4oJzGrChx7xHy3iCUhHP7nxJqSgPShI58x34g0HILJRZZOgA6y9UikZZD771crha7AYA6W64Wr1BAErvrGtNDlLYU9x6SdelcA+bbLyY0o5Dj/fOzN/MrsWvHgGKJWZTfpzDxegEaea7BmaVueElBlJlrS98/NncA/NHAcV5LkPpP359//f6xuSOgxF1xWWK07vvlatEjP5KWkFtjl8xEIePlanHlL0PDGlMwdMLST0b1WqOnGE2dOobj+8fmf0imo19+BvAPEX8PmlR/IdD9EqVZlVRrkitZ+nP3gGRlc4Okic2g06C/i5zAPbjdDWaChL0PQ56zzLUnl8E0RPjWuAgRUE5RSQmmsO/5/bM381t6j2rogJLJVxKTbgJvV9EPCqs64AZoCc0AeLkQvJoIUHT973zPW6ZhBS47v19F/G2uqHJODEDpT2GakoBSxWSCx7rdN6Dt7DANV8BnuVqI980jgGBEdIEX8P6p/JPO0x9TdgD7Un6Eo1wLKnT9veVq8QGPYTeD5WqRWfVMlzWmKE1hlyZHHBhSUz9CExo8ezP/M71Ht22UktakeC+yFJGLF5iMGlAD+zbkGEVpHEENEPzm4sZ1iZLGCbQtG9tjrYv5qV4TXc+FdA2ZdA6qOphS28oEJgD4O57mwen6l7SglLM5J1cniAJRUzJ1XuKxBK7LQaD+RgqJi8L57pEt1Ry0noOA2CfjcCozmKCgpaSu501g+jcA/wf9YMrfnr2Z70vHerAETOJB7AdoEPBpAC75WDI3W3VhZRGotP1Pvshxo8GYpQSTasR3Wse3tBv3ewD/q2uu+dNNvn9stlXg5v+cITBFVbAUGtABODFY515qN6z0mX4XBdxr7RgoqeSQsURgjoVJJ7LJoh3HRL6nRGacqnYVoxV16dUGFbCXruuAHox7Molv4YUyMJTi5YzMnHsAF8vV4mi5WuyoOPPrtcYPek0B/ETaf5fGKw8ZAPiiE/9EeabndN0XJjYtflfhyWNyoP+IZKEA977FQckUJCj9nHAlv8Ojk/ca7pXQnUWYl3ELSBFQ7cj3dblaKHcxkf5+CS9tpIV88iT3Adzq7N7Va43hcrX4Rub/IZ0zm3IJTLnUFQViAitNr2LnQmP6/rH5oLgr53dYQzLJ9lB8iRQBGX+3EV3wJGqeGQAuucLnHvIJrEzi24mrrWT0/HSeE+EzSxtG4LLGNLPArPhvJE/W1TXd/qaoUY3o59rHgeK2qoVzWJwP8LiTMwLF/uQVSBnxPVPfzycPWgS40t5POQlXSZuSEm9FQOrLDBeZDmVQKCXy0numab+0lJHfeWlMhnw9UbLetQuKhVKo1ZTlhA3SzG4QsTMl18UqS65fQJySqXuu1QIqpnyJKcktkddljekO5Ze/S//+o+LkfJcDjDZaP2loPH0xwcsyQNK1T+l1CS9KOm0b9zN6zZarRV/SfgOh7ytfklWD1LFu1HgVNab16hukMcX4XkxqTIENBiJ8RX+jVVW1RMq67G6YmZdxP7rYwEqNMXuAoTIzDmtVB0i+0aDsj5JaOWUR3pF5Abktxwc7zFQTzQcii/gbqsP0GsCvKlASKSomzMCMKgyIWuKfCUBTw2N25ErDxZzmb1JQKfeGy9BRrusUb+ksamUtFJcbmAgwIl/uNwSnpgDA5bM3864JMBnMkxMgugNwY1sLnwpCStdHJTrkvFf0Q6l2qtaZPz9pfHdf9f1VBpNRByzB6e8A/h3AvyA4jEDUWgK8NJZEoQYptaUn7Z5c6mlfMUjpaDldKDjKA5JwTcDpOG5RkywcJZgxmAwK+Zv+Sv/9NYtrTgglo51eWXIHlc5u2zktPKELjgQ/k37JtgKcerQ4xyb9ckqKeflXepmUAbzQAdXxmtHgt+l1XK81hvVaY8pQcksoPeUSj6kpE4W58oVgFnpM0pZ3YS5AWCUVRZSx7iCmSYjrGlNY6dxuvda4VCitm0lrZMOxTT8D+K9nb+Y/YjTFtYnGviLWoiRNua9oZpkw72Id4r4d5NDqHmXVmJ7Tz7i0hmZG329y5+kPMVCaEGBfCK2IH91KaVFRGk8HXs5bL0qbITgc4zFrIKl04hoW0PwU33NRVlPuU8jvD+jnXcznX2ZxUrT7Fpdk+5vCcbafvZl3BYxIA5zQwHZpYh7bAqO8OmiwbABqSL7Sbox5dx9VMYCO1SPTPxWcgsw63//fSiA7KqMp10NIhCulpQwRs/WadWoEJfr68+ku4eXZASGVCXwNB4bQSE8oaCyOkEHsE4v2whAX9T0C8CFqnOg4X5Au7ik0QtxvigY9g2UHUw/xofm7eTzs1LTgD3iMcfotDEiOjUGLVPL3eaQqsBgBlOoW/xXS+Z3aMQAUPuBuqQJvyXZ+CHqJhybs79KrV9T5yw0uHbz3reVq8bXoe8gSO0ZXEXP/KMr8puJ2Q4VnKOoVd/wHAlSpfEzfYv6uUtPntKiTf/ZmfuXohL+Ct7Oyj4z7i7EkFwoPeY1wv9EYEdv8kt8pTUhB5PHh+caetFvbLvnAqJho++y0VQbSEWmjQr3vMpTcABTBKWjXrQOvlG7UTtoQyStCdBAdU3WJx6oTpQHTPOoh0jjOKU9fJS1p7PMfcEKuW9pTL0R72ic4tSK0m0sk37EbRz2PQYG/roMpKg5JJxSAwaSuJQHehsGU706ptKd9Ms+bEXCaptCcxjqWietgeh7xN9FCXCVobF9Tw6oCkHYISGPf5NzmtJZSwOltCGRuARzGaE5JfU7KCoDrYNqLgg39/KxKdJ6yayj18LTW1aQs5XBZNiDTDXkWovxCw4RwGqi2hXJ9or1SeM+15gNZZSC1SEsaBEDpNT/KpYLSDwlObTxNDh7HRIonhdOFypvKWvZkbXbQ++KSeWXZrZqpEpPEyeEA1ZkDQfXi44Ikr6AfhBkbULnt+I1U1YD6poleogl5RGZbJ2QCMZSqo0G9xVOf7G3Ms3ac4OvGcSady6bcOxWbVlJXVaVTFZMuIATAv1JyOADDCYiIc5KCJHWlWTow0U06U3yv2G3TicEYlBlOki+pE2HOTvlRrTScZP/RPqILwV1D398UqTW5qjHpmFsig3kKvXozgzKGENA1hZVUnXE4AAuN/3vf8xJadZLef4PHlu+ptaYtBx+sHvSb+a0duJqO8I3PuqZVyoBRqFLIO28sYeZ+x2fiT8M0cejXEQ/cbNpy7CYlufCNG6DQOjzwoUVM8XTLzFz4oBR33zJvYMjiLJiCFrTdiEYHQ+h1gm4joEHGtkM3KA2UAK/wVVJnnUh0bDlwjw5lFZk0zNsYjZChxBJl1vl33qI2nt5qfkXfWY3JYKO+tWaQ4pjWaU90LcfwSgm/FeemEGPSZic3S0LFwKRJt+ucxkSqoal0kTM6Xpps6Q68+sm9osulUILtV7o/d/Vao0fmatyum8h5YyixqGpOU5+lcRGT7KvjCD91SmMyUNpTRXNqwQvATPM951Bs02zA3j8k7Ug+33UkrcrmAOe8sRh6Jo1pTf45uWXxDYh9wFLKrF5rvPCZQ32kK8AuTL0LGGocIHVNPcFTp+JG7WYFkG9cMwtLwjm53tmOWuQ0n+ENyNkMpoecvmqjl3pEzlBaWN3hsdJBUIG7JrwyLnv0asZAcr29r7jTyDtvLMZcCJJ7Jaobio4fd+M4W5Ze+NAwGFThcezbZj+CV3DuzLJbJJuiKqsSJ+KyZKY1ISR8QDc0R9a+bAXTQ4FfP4O3hXnpu8GHBKlXBsy9NKIbLMqaEksWz6gMndBqAZrm3BpwWxZesM6F5KKdwNcg0Of32UM2DvpQO1zjHnE4AEtelk2Y1tSCuhN8Dbgtyy7UNijFQso3ACcZmX2ylnSlCMJdznljydG6CdSaNLv6rrX7LYsucAj7fDlxJt8xAsLpfdv6TSQ3/dYg1LHXORwg1Tw8gsWt2C28X2KhDMy1VGxb/mTublk0GVyvuT2Dl5H9PgJUcT6qGYBP8HbvrqXcPtWB5XCA9POwD5+PkSXynq1NtbAFUcecYzDlA6oNyATACqRRIcQ81Lkv7OQ250ZgM1jv3olNmCgnuGpVj3a91phuF3gxR1Lf8jnStSG2UfbJNB3DS2F5WK4WX6kX/BEeE23noBbJlEpyJPrNQy8GhKFkBkojhpK2fKKfUb0c5zoH3CpoIvg1gVG91ugZqCCgI1F0bwE4IBNq3/JJ0WWzwxiU1iu2xud3ABxWeQwUzTlV7b9brzUutwuaCP4TPFuuFkOaELsZn8I5JbBeRti503qtMazXGi/oRof1fS9adhlKqRfIQZqVHV760bjKDVPlpN2I0kCq9/UlkHN1Adp5C3PiCjj9IBjMMjiFdpIIaNH3nc5rF16W9aSgeTCjVcXJEri21LSi8xgHjPUPjWP08Bi68RLVlvf08yACXiryarla7OStMcU1qDwjnxNod6lt8GE2UmCfwHlZrzVe5wyqc7qGF65qSWT23Bbd6CHCZTDRPMZAY25XGkwasg/k4GOSbMsRvOp22rE4KWOccq1lLfmn9pAuLmsCb+t6XhZnrGpWekFQEmb+UOEYYTFlqXfz6Hl5jhzK6GRwbx+ixlYnOHgr4xP1O7y69VrjMmn0coL6TFakZEgpLHIFASF39POmTBBSnQsFjENUFHLsOcVUn0gEppBYNefSiSQFIiw9pQe1eLzswBSh5Qg4qXrpN1YxXe8+WGwx4e4DzOvjPB8+hYUtFiwxD5cyTCKK/uWu5ZseZwOBlrvbGZ3g1wgzZrxcLY40StsOaEIJE+9S2imbhJhAvFtll1yE+BKaOa/mnZTHaMWs+E2Vh5fgdk8LbNA59V0cZF9Ns1SyncEE2EF87M9YhAcQZOKCKzsUoNiSbsJUckC34Tmg2/Q7DpCzy4QLA8I4p3PowUweZlyj1ZcxQBoSkAYxFsLU8WEPA7RyKMa2wcFvLVeLHkFBZXdDbgwwhFr80q34jI/UU9KkpowC62SsoMlkCaU4LUdJ46HzjFtw94LATBr/vSIc3zs+3kZ2p7cNDf6QbMcBwek11AIS5fCAH4ra0xk/685oS1eKc+Aoo+/fgV4mQTMCbmc6nxcpVxHmWpB0ZXOIjtFybNj7JhSEbQOD71eTBZx6UPMh7ctmGkVcbyO8KeU5P/LpHtY8JnuMCRdk2vcyOI0Lzfcfh2nqip/fp/u7E3GsMJlJnW6O4O0ejslKcAZOpqyW7ZST7ypETR4kSDHZCLyTnNznvhVlyHhJpUHc070+yvh7dP1HA0pw3jF0DkPoO7s7CbU+pWPFaRoEtSu6d7LZeFK1ubqVYuKpVKWTi+YPFdXhja4lLEZh4R+zTMp7pCxjk7p8S5pkcF9gb5LjiIX4XuMzMwA/wQsfCLtvzpdi0Sh2mDyOSaNhgNxmSGfCchxSPhPCaAcV3c4YEZIowNBAhQpRVz3pcZKAqa1gMjrf6Ub1ntZrje1tnYOKOkFkcqnmsYmt/p0Q80zX3mcxC4qBYf/OvaHjJM2p66f83gP6mTTGSvdzEwLwieJ5lV0mQISPSWz/S0XLbiW7eeBbHZQmrOzgps+eZzjBWNRBMUjhS5HnTM/wuQ+ouN6O4vfrONxtAUBfcdevY8r/VqCoQPsmFEw0SW8JQGEDfStt8avGLqxXQfrsMECDmlFJjykzJTUovmq8vaMDgTCQZHAZ+7So9RQ0QxOLWSenB1CYZ1ON837n+JR8rvCeb0CA81ujNu/aHqTPDaEeYxRYNH+5WrQYSEahlLT6prY/I0GCdVKJahNkyoxU8fmY+OwuQUzne3YdrcO1Ay98I26OPK35TSbbvuYXCv9RT8O0E7FLRz7IMZSKh5IwoR4owE9Vg7rJ6fLGws8pnxs9rF1D35HWnFPRmJLC75SuveXg1FRZuOZrjcnQarPeRdHUnrgjhV1QCtSgoFgfSHpgmpL6vofsWqtP4FUp+CF9f9q68WL7/kuCc24T2AZx5wyNfmtBx3CpAoFOqEC91vixZVgFljvGKqlu3JzR6OBnbU6F9s5TmJRBGsUJzLVYX8PTEJza8Hw/nQSfiwNTGlPRyWcnCZhMr7AbAXI0SS6CvoOh5BSU4oA1h1f07o7MurnPzFLRtE6QvurnsSE4deFVC9A9n3bM94pKrhcpx8s1jamnoB0+tgjXCJRMRXOpy+k+uDljmaCkCq5PMrTCYCVVc0zTOqtNYHyXAnTnSFYeOQ5MKhqVyv08dsknqzhH1xZXZmASqw5Hb2euHqddeYuUkYCV/yGTKjz2EwKqS3C6SPh5UR1DB0wT+r5xxDE/pNTkrEzZEuWjQzpKq5pxaz+1TgxS2EBEyThj8FVdUpsDKLZf3hlpDre007ZO4hXdaOA5oZNUlBjD82UlzSDYS/CZG0TH6nyAfsUD/3jZmkf6LuLaVOO61ub/NtIFpXVUJk2VmwFmuEINU0JpRGP/lswLG8rJnMELpvwqQhVEIC68UBTdXoNjJG8/38FjowgdMB1E3O+DFObpxu6jZXOxRWO3nwJMM/naRIR1Gq3pIGbgZ2zOZQKlNE5i4eNrwvPlHNBDJUoUFy37BJV7sagRoF4kOL8L5Bdj1YxZLBKHBtgKJZKTmL+raK0blTu3adBfp9Sa9mhSzwIegBeMEnN2vAEonQN4K1V6GAhziibYXALUzILLHsvBuLTI6Zxbh64ra+DOEF7ze4KUfRFthRKZ3meSVhj0dxXN/uYJmEh2U5zfGbySmi9o4s/gObJ6jBOjcpoWSmQWhdX9OSNACV/BTxaZeWNKKN8BcE2r8ERjfl5nDNpPSOaX8sPNb/4dOzAnhXxIaMYBvkYFazARkdO05O4sV4srSsx9weklxlemXoQpoPLAdeu1xlCxJpYwpd5JavZuiFacp3Tg7e4c0vw6hrrz/gLZV6wI0gxGihrDzOejGdVrjZ4DWRGDMLgomnlibv4I05hErtrI8MCwZAulCeIdqrpNRv0a1D1pWXPSorow1A0jhfb0lVbjD4oaXSfC1AqTvZTvnUG9auu+D2ZvXXAt+Pjxw/f3luL1PwHak8hrMr8mjANrBn8YA6W4xSAplJ7AgAD1jibSMQGqqHCDfYKmqO+lAqczzfNVBVOYVqSyA+eqpgRslmEJuv8HKtcfZF0FpoSQMzyJyj5jlBjXlM40HwZZ2gSlHsw1l5T9UNdSVYmi/FCixtcNzDu4Vf0jewmP79d2zx3zy8pz832ANnWqcIxAH1porho5snVBw+VwzUHpKERTmhAEzmIWiDaAuWKOUlKz/V6YVFKsURG7eQPJlzFReJhUz0+lc6yqDylO23WqprevcN8oQMNrqmiMYb7o7ZgPvdAw6ybs8DY66OOQh+AC8SU1fqKxSFNWQ8ukogj/Q9KiXhCk8nQJnMFzbt8ogEe1VbWKxpREW5r4ju1iowF5Xn0I+PuJwjFCtezY7H7FrrojlzKdHYDSIARKdzEmmb8jzSDn0xdBkT1p7rSRnx9qn675k4K2p3q8ONeFrrYkxlEc27leib4idaOAPMcW1JzeN4nBRBNM+BFmIX6MHiMlU/OtC+BzDGjOJVP6FOZ8SklX03upwYFIe8nLzDtDvM/LxHnoppf4E4PbjmZFHBjQliZRmutWwodHPADHXH3SKJTGIVBCDGjkImlpd9+ykAmZWWIipqkaoPu9toSw+KHkbOVWqYbbbkiIgEr1hMi+gVuMhEIHeCcGJspQkjSlgcWXvFFHiHZu0tRMckVKAyVpEZ2HlDgZKo5n5D1gMNmpKQkNoxkDpXW9qwx337KSczxWumwiffVKm6H0WRrH0ta416i7FFunjcFU7EAGqb1CAzqMgVLS5g82PrhvSXPccUDr04UvpOspdeMNU9oSg8k+TakLL9m0KlDym3l9un7QPTiG+9U5qwIl7SqVDCY3NCXV1JFdqVWRa+abqrQlE2+uAGrbZEJmaiWgRHPxSmERmamWQeIuJcWsLLc+TaEL4DomdUSUkvlBdZnKCiXgMXG4Sa9rFJv2oguli4pB6UhRs1XODGEw5S+nvkl8TI7AKN+KHM0NeDtZgwrcqzFB6hRYJ+uKeKiRhecrIvNL7+j2SV/RVFeNuGdTrkC19waPsUdR2o+/T98Q5d9ej9JG+r4Jbku4gdhlvIWlnUwy0v5V739bJ2WNwVTQgCr6iTZyqCoOJf/q+5Pvd0X6oQQw15U/q6ApaQRTjuq1Rk+e92zKWSgMpdSyD88H9YWABDz6ofKubiBSgU5Ik6tSNsSF4nzvyfOeNSa7V5so0IgdOhEZzlBSWJWxWfWxieTNLgXYRPfgb/T/uWRGih3DJrzcsT1QPFZF5m/UoprYhGMw2TuoXXilQ4RWdQUuWaxtVtVrjanoDkvazCsCyR0e+8V9w6a/SoaO///id88JQq8k6LlYtiTN/FXNxxwlTfBnMNkFpXYF88iykg0/lAT6dadff81qMgtf+qATC8IqlfzRCKREvdZI7Cr6Hc/f3GWPoZSLCD/UDEB/uVpAhg7934R2VrWqre8U35eqzDFrTHasOLu+Ff2CzTf7TcaqFUfUMOHW5nTS7+JduZyFADSSBtAfhMdQsl9GFYRSSxFKoM7B0zTfxxpTgQMtDx5rSk5Bqcdafqi0TdT+Z42pOM1pGmC7M5QYSjbKheL7zk01JGGNyY7ViDUlhpKtc1N1E8aoz4135YqXL8i+9jVLOqlUnJIkp1DfGe6b/GI25Ypdka4YSgwlS+emTvuvrumekmzKsfnGEi7tKjZx1ey0082iBRVrTMUIO7rtl25FobRTNJQYTMXJZ74F1kPpsmoXTbFK9zbcIzblil+dAPcL77P5Vo65qAqlzKPeGUz2rlwHqEb5XIaSHVBS3R1WbijAYKrGxOGk3mxlt6rt7jVK6+RWMpjB5LZGdQoON2Ao5aMp5XqfGEzlmWBNNv8YSppz5t7W+8RgKvfk04lHYShVS+PWKTucu++NwVSNlVHIIbzUgcqbf2mqK1ZMUypkQ4DBxBpVFcMUKqcpEZB0WlzlsvvGYGJRnbjPUW6nelXNtx7U/Y8zeG2opkWdL4OJRcUfcYJyhCowlNSgVHjDTgYTS1VAVVXzTSdZfAJLGnYymFhMgOqAXjb6qgr1lRQ8LrcaH7GqEB6DiSUrUO1ZoFVZowHkPAa6YSLW1ZxiMLFkbUoIySNR+RzADYB5hYMmdVOXrCyEx2BiKfRBkvvpSd1xVeJsZvBisq6rmuMWACXd4oPWlndhMLHY+JD18HQXaUIPHoMovelmvYnLYGKxWQNoVtUs07hPQ03TzQm/G4OJhaU6pts5gPcugJ7BxMLiHpRa0AsFABwrF8w1v1lYHNKSyHTTgdIEXnCpUzXMWWNiYXHDbNNJwF1rSXB0s4DBxMJiP5SSlFV2utMLtwhnYbEXSkkK/Y0AfAAwd/naWWNiYSmPllSaLi/s/GZhsU9Luod+bFKpWk+xxsTCYgeQWvBSbHRzCa3MdUsr7GNiYSnebDuFfnebCYFsXsb7whoTC0uxZluSLjbOhgGoCvuYWFgKMNuo+22SHbddl8MAWGNiYbEQSEhWlngGoF8FIDGYWFjyA1JSP1IlzDYGEwuLO0CyqgZ33sK7ciws2QApSW7b2mwDcF3le8gaEwuLeSD1kaxhaCXNNgYTC0s2MGrC6wwzSHgYBhKDiYXFGJRaDCQGEwsLA4nBxMLCEmCynSB5I88RgA9lSrZlMLGwFAekNA7tNZDAHV8YTCwsBoCUNAZJSJu1IwYTC4sJILVSmmszAO/hSJskBlO2dj+ryCxpYXRAGlJSc41blhuUMkR+nwDYW64W3D6aJYmpdgD94myysEObNSYl1duZbqMshcDoEMBxShhN4HXB5YWQwRQ76Y7wuHMyA/CJVzIGEZn6TQAvkdxvxNoRg8noiigA9ZlXt0oBqUUwSqsZAew7YjBlrLLzbkm5NSPQmJvQjNbaEXhjhcGUoYnnXznZR1AuGJnSjN4DuAEV+Oe5wWDKS70/8a2m7ItyD0YiLWTPAIxYM2IwWTW5w7aJR2B/lG0QEo7rV0geYwQeZwaTi6vvWYhq3ye1nlfTfMwyUdfowJA2JJvuN8JM47FkMLlu6vkn9wWDytiCIED0HOkirhEzXqwVMZhKBakDRCdwilX4G0/+wkwy1ooYTJV9qHR2fSYA7sh/Ma+SQz0AQHv07/2MvlKY2uCFgcFUVThBeuieQ98HInb/7mhFB6Se87Y+VNK1I+AegO4DYNYfpKKhsjnNYGKJMflMmCgzCVR39IL0EIbJXOHYzZj/QwLNnu9np4Db6oc4A4jBxGLI9HtOD/cZ3xV105chxMJgyg9UeTh+bRehEbIpxsJgshhWQg6x6a/J0lmcJXSEWSnMUNkEtd6XxsJgYlGHltC0hPj9QCANDAZhJvu6gEdHPQg28MGGtR4WBhOLFthihaHCYqv8PyyI5qIMCZVbAAAAAElFTkSuQmCC" alt="IIPA logo — pickleball paddle and open book"></div>
       <h1>An Indiana high school will make history <em>this winter.</em></h1>
-      <p class="lede">The first-ever Indiana High School Team Pickleball Club League — which becomes the road to the first Indiana High School Team Pickleball State Championship in the sport's history. Coed teams. Sixteen indoor home pickleball clubs statewide. All it takes is just two girls and two boys to put YOUR school on this historic path!</p>
+      <p class="lede">The inaugural Indiana High School Team Pickleball Club League — which becomes the road to the first-ever Indiana High School Team Pickleball State Championship in the sport's history. Coed teams. Fifteen regional indoor pickleball clubs serving as home clubs to all Indiana high schools. All it takes is just two girls and two boys to put YOUR school on this historic path!</p>
       <div class="cta-row">
-        <a class="btn btn-gold" href="mailto:IIPAssociation2026@gmail.com?subject=Register%20our%20school">Register Your School</a>
+        <a class="btn btn-gold" href="https://forms.gle/Hz6xKMCTQmeea3ew8" target="_blank" rel="noopener">Register Your School</a>
         <a class="btn btn-ghost" href="#partners">Partner With Us</a>
       </div>
     </div>
     <div class="statbar">
       <div class="stat"><b>411</b><span>Indiana high schools invited</span></div>
-      <div class="stat"><b>16</b><span>regional home clubs</span></div>
-      <div class="stat"><b>165</b><span>indoor courts, statewide</span></div>
+      <div class="stat"><b>15</b><span>regional home clubs</span></div>
+      <div class="stat"><b>163</b><span>indoor club courts</span></div>
       <div class="stat"><b>NOV 17</b><span>first official day of Season One</span></div>
+      <div class="stat"><b>FEB 13</b><span>2027 — the first-ever Indiana State Champion high school is crowned!</span></div>
     </div>
   </div>
 </header>
@@ -209,11 +290,11 @@
     <div class="sec-eyebrow">Season One · 2026–27</div>
     <h2>Twelve weeks. One champion.</h2>
     <ul class="tl">
-      <li><div class="when">Nov 17</div><div class="what"><b>Season opens</b><span>Practices begin at 16 home clubs statewide</span></div></li>
+      <li><div class="when">Nov 17</div><div class="what"><b>Season opens</b><span>Practices begin at 15 home clubs statewide</span></div></li>
       <li><div class="when">Nov 21</div><div class="what"><b>First match Saturday</b><span>Two team matches every Saturday at your home club, through mid-January. Some clubs with lots of teams may choose to run a bracketed tournament the first couple of weeks to learn the ability levels of the teams.</span></div></li>
       <li><div class="when">Holiday Break</div><div class="what"><b>Holiday Tournament</b><span>TBD by the home clubs. Team pickleball individual tournament events of Girls Doubles, Boys Doubles, Mixed Doubles, and HeartBreaker Singles might be played.</span></div></li>
-      <li><div class="when">Jan 23–30</div><div class="what"><b>Regional Club Championships</b><span>Regular-season results seed the bracket; Gold, Silver &amp; Bronze will be competed for at all 16 clubs. Regional Club Championships must include at a minimum the top 8 teams from the regular season.</span></div></li>
-      <li><div class="when">Feb 5–6</div><div class="what"><b>Road to State</b><span>All 16 Golds earn byes; the 32 Silvers and Bronzes play one play-in round to earn the right to face the 16 Golds.</span></div></li>
+      <li><div class="when">Jan 23–30</div><div class="what"><b>Regional Club Championships</b><span>Regular-season results seed the bracket; Gold, Silver &amp; Bronze will be competed for at all 15 clubs. Regional Club Championships must include at a minimum the top 8 teams from the regular season.</span></div></li>
+      <li><div class="when">Feb 5–6</div><div class="what"><b>Road to State</b><span>All 15 Golds earn byes; the 30 Silvers and Bronzes play one play-in round to earn the right to face the 15 Golds.</span></div></li>
       <li class="final"><div class="when">Feb 12–13</div><div class="what"><b>The Indiana State Championships</b><span>Drew Brees Championship Court, The Picklr Noblesville — the first state champion in Indiana high school pickleball history will be crowned.</span></div></li>
     </ul>
   </div>
@@ -222,8 +303,8 @@
 <section id="clubs">
   <div class="wrap">
     <div class="sec-eyebrow">Find Your Home Club</div>
-    <h2>Sixteen regions. The whole state plays.</h2>
-    <p class="sub">Every school is assigned a professional indoor facility as its home club — for practices, special clinics and events, match days, and its Regional Club Championships. No weather, no waiting for a gym.</p>
+    <h2>Fifteen regions. The whole state plays.</h2>
+    <p class="sub">Every high school in Indiana is assigned to a professional indoor facility which will serve as its home club — for practices, match days, special clinics and events, and the Regional Club Championships. No weather, no waiting for a gym.</p>
     <div class="clubs">
       <div class="club"><b>YMCA Sports Center</b><small>Crown Point · 12 courts</small></div>
       <div class="club"><b>H² Pickleball</b><small>Mishawaka · 7 courts</small></div>
@@ -233,7 +314,7 @@
       <div class="club"><b>3rd Shot Pickleball</b><small>Indy NW · 15 courts</small></div>
       <div class="club"><b>IPC East</b><small>Indy East · 9 courts</small></div>
       <div class="club"><b>The Picklr Avon</b><small>Indy West · 12 courts</small></div>
-      <div class="club"><b>The Pickle Greenwood</b><small>Indy South · 12 courts</small></div>
+      <div class="club"><b>The Picklr Greenwood</b><small>Indy South · 12 courts</small></div>
       <div class="club"><b>First Serve Muncie</b><small>Muncie · 4 courts</small></div>
       <div class="club"><b>Dill Dinkers</b><small>SE Indiana · 12 courts</small></div>
       <div class="club"><b>The Crimson Pickle</b><small>Bloomington · 8 courts</small></div>
@@ -242,6 +323,167 @@
       <div class="club"><b>Pickleball Euphoria</b><small>Clarksville · 10 courts</small></div>
       <div class="club"><b>Region 16</b><small>Announcing soon</small></div>
     </div>
+  </div>
+</section>
+
+<section id="scores">
+  <div class="wrap">
+    <div class="sec-eyebrow">Scores &amp; Standings</div>
+    <h2>Every match. Every region. Every week.</h2>
+    <p class="sub">Pick your regional site to see weekly match results and current team standings. Results are posted after each match Saturday, starting November 21.</p>
+    <div class="region-pills" id="region-pills" role="tablist" aria-label="Regional sites"></div>
+    <div class="score-panel" id="score-panel"></div>
+  </div>
+</section>
+
+<script>
+(function(){
+  var REGIONS = [
+    {key:"crown-point", label:"Crown Point", club:"YMCA Sports Center"},
+    {key:"mishawaka", label:"Mishawaka", club:"H\u00B2 Pickleball"},
+    {key:"middlebury", label:"Middlebury", club:"Pickle Haus"},
+    {key:"ft-wayne", label:"Ft. Wayne", club:"Power Courts"},
+    {key:"indy-ne", label:"Indy NE", club:"The Picklr Noblesville"},
+    {key:"indy-nw", label:"Indy NW", club:"3rd Shot Pickleball"},
+    {key:"indy-east", label:"Indy East", club:"IPC East"},
+    {key:"indy-west", label:"Indy West", club:"The Picklr Avon"},
+    {key:"indy-south", label:"Indy South", club:"The Picklr Greenwood"},
+    {key:"muncie", label:"Muncie", club:"First Serve Muncie"},
+    {key:"se-indiana", label:"SE Indiana", club:"Dill Dinkers"},
+    {key:"bloomington", label:"Bloomington", club:"The Crimson Pickle"},
+    {key:"columbus", label:"Columbus", club:"Tipton Lakes Athletic Club"},
+    {key:"evansville", label:"Evansville", club:"3rd Shot Pickleball"},
+    {key:"clarksville", label:"Clarksville", club:"Pickleball Euphoria"}
+  ];
+  // Weekly results and standings live here. Shape per region key:
+  // results: [{week:"Saturday, November 21, 2026", matches:[
+  //   {top:"H.S. North", bottom:"H.S. West", ev:{gd:[3,11], bd:[11,7], mx1:[6,11], mx2:[9,11], hb:null}}
+  // ]}]  (ev arrays are [topScore, bottomScore]; null = event did not finish -> shown as dnf)
+  // Standings are COMPUTED automatically from results: W/L from match outcomes, PW/PL by summing each side\u2019s game scores across all events, %W = PW/(PW+PL).
+  var DATA = {};
+
+  var pills = document.getElementById("region-pills");
+  var panel = document.getElementById("score-panel");
+  function esc(s){ var d=document.createElement("div"); d.textContent=s; return d.innerHTML; }
+  function render(key){
+    var r = null;
+    for (var i=0;i<REGIONS.length;i++) if (REGIONS[i].key===key) r=REGIONS[i];
+    if (!r) return;
+    var d = DATA[key] || {};
+    var EVS = [["gd","GD"],["bd","BD"],["mx1","Mx1"],["mx2","Mx2"],["hb","HB"]];
+    // derive standings from results
+    var tally = {}, order = [], played = [];
+    function team(n){ if(!tally[n]){ tally[n]={team:n,w:0,l:0,pw:0,pl:0}; order.push(n); } return tally[n]; }
+    (d.results||[]).forEach(function(wk){ wk.matches.forEach(function(m){
+      var T=team(m.top), B=team(m.bottom), ft=0, fb=0;
+      EVS.forEach(function(e){ var s=m.ev[e[0]]; if(s){ T.pw+=s[0]; T.pl+=s[1]; B.pw+=s[1]; B.pl+=s[0]; if(s[0]>s[1]) ft++; else if(s[1]>s[0]) fb++; } });
+      if(ft>fb){ T.w++; B.l++; played.push([m.top,m.bottom]); }
+      else if(fb>ft){ B.w++; T.l++; played.push([m.bottom,m.top]); }
+    }); });
+    function pctOf(t){ var tot=t.pw+t.pl; return tot?t.pw/tot:0; }
+    var sts = order.map(function(n){ return tally[n]; });
+    // 1) record
+    sts.sort(function(a,b){ if(b.w!==a.w) return b.w-a.w; if(a.l!==b.l) return a.l-b.l; return 0; });
+    // 2) within same-record groups: head-to-head among the tied teams, then 3) %W
+    var out = [], i = 0;
+    while (i < sts.length){
+      var j = i;
+      while (j < sts.length && sts[j].w===sts[i].w && sts[j].l===sts[i].l) j++;
+      var grp = sts.slice(i, j);
+      if (grp.length > 1){
+        var names = {}; grp.forEach(function(t){ names[t.team]=true; });
+        var h2h = {}; grp.forEach(function(t){ h2h[t.team]={w:0,l:0}; });
+        played.forEach(function(p){ if(names[p[0]] && names[p[1]]){ h2h[p[0]].w++; h2h[p[1]].l++; } });
+        grp.sort(function(a,b){
+          var ha=h2h[a.team], hb=h2h[b.team];
+          var hpa=(ha.w+ha.l)?ha.w/(ha.w+ha.l):-1, hpb=(hb.w+hb.l)?hb.w/(hb.w+hb.l):-1;
+          if(hpb!==hpa) return hpb-hpa;
+          var pa=pctOf(a), pb=pctOf(b);
+          if(pb!==pa) return pb-pa;
+          return a.team<b.team?-1:1;
+        });
+      }
+      out = out.concat(grp); i = j;
+    }
+    sts = out;
+    var html = '<h3>' + esc(r.label) + ' Region</h3><p class="venue">Home club: ' + esc(r.club) + '</p><div class="score-cols">';
+    html += '<div class="score-box"><h4>Weekly Match Results \u2014 ' + esc(r.label) + '</h4>';
+    if (d.results && d.results.length){
+      d.results.forEach(function(wk){
+        html += '<p class="week-hd">' + esc(wk.week) + '</p>';
+        wk.matches.forEach(function(m){
+          var ft=0, fb=0;
+          EVS.forEach(function(e){ var s=m.ev[e[0]]; if(s){ if(s[0]>s[1]) ft++; else if(s[1]>s[0]) fb++; } });
+          var rowT = '', rowB = '';
+          EVS.forEach(function(e){
+            var s=m.ev[e[0]];
+            if(!s){ rowT += '<td class="dnf">dnf</td>'; rowB += '<td class="dnf">dnf</td>'; }
+            else {
+              rowT += '<td' + (s[0]>s[1]?' class="evwin"':'') + '>' + s[0] + '</td>';
+              rowB += '<td' + (s[1]>s[0]?' class="evwin"':'') + '>' + s[1] + '</td>';
+            }
+          });
+          html += '<div class="bug"><table>' +
+            '<tr><th class="bteam"></th><th>GD</th><th>BD</th><th>Mx1</th><th>Mx2</th><th>HB</th><th class="bfin">Final Score</th></tr>' +
+            '<tr class="btop' + (ft>fb?' bwin':'') + '"><td class="bteam">' + esc(m.top) + '</td>' + rowT + '<td class="bfin">' + ft + '</td></tr>' +
+            '<tr' + (fb>ft?' class="bwin"':'') + '><td class="bteam">' + esc(m.bottom) + '</td>' + rowB + '<td class="bfin">' + fb + '</td></tr>' +
+            '</table></div>';
+        });
+      });
+    } else {
+      html += '<p class="empty-note">No matches played yet. Season One opens November 17 \u2014 first match Saturday is November 21. Results will appear here that evening.</p>';
+    }
+    html += '</div><div class="score-box stand-box"><h4>Current Standings<span class="hd-region">' + esc(r.label) + '</span></h4>';
+    if (sts.length){
+      html += '<table class="stand"><tr><th class="num"></th><th>Team</th><th class="num">W</th><th class="num">L</th><th class="num">PW</th><th class="num">PL</th><th class="num">%W</th></tr>';
+      sts.forEach(function(t, idx){
+        var tot = (t.pw||0) + (t.pl||0);
+        var pct = tot ? ((t.pw / tot) * 100).toFixed(1) + '%' : '\u2014';
+        var medal = idx===0 ? '<span class="rank g">1</span>' : idx===1 ? '<span class="rank s">2</span>' : idx===2 ? '<span class="rank b">3</span>' : idx===3 ? '<span class="rank q">4</span>' : '<span class="rank plain">' + (idx+1) + '</span>';
+        html += '<tr' + (idx===0?' class="lead"':'') + '><td class="num">' + medal + '</td><td>' + esc(t.team) + '</td><td class="num">' + t.w + '</td><td class="num">' + t.l + '</td><td class="num">' + (t.pw||0) + '</td><td class="num">' + (t.pl||0) + '</td><td class="num">' + pct + '</td></tr>';
+      });
+      html += '</table>';
+      html += '<p class="stand-note"><b>Standings order:</b> record first; teams with the same record are separated by head-to-head results, then by <b>%W</b>. <b>PW / PL</b> \u2014 total points won and lost across every game this season. <b>%W</b> \u2014 percentage of all points won.</p>';
+    } else {
+      html += '<p class="empty-note">Standings appear once registered teams are assigned to this region \u2014 school sign-up closes October 30.</p>';
+    }
+    html += '</div></div>';
+    panel.innerHTML = html;
+    var btns = pills.querySelectorAll(".pill");
+    for (var j=0;j<btns.length;j++){ btns[j].classList.toggle("active", btns[j].getAttribute("data-key")===key); }
+  }
+  REGIONS.forEach(function(r){
+    var b = document.createElement("button");
+    b.className = "pill"; b.type = "button"; b.textContent = r.label; b.setAttribute("data-key", r.key);
+    b.addEventListener("click", function(){ render(r.key); });
+    pills.appendChild(b);
+  });
+  render("crown-point");
+})();
+</script>
+
+<section id="pressbox">
+  <div class="wrap">
+    <div class="sec-eyebrow">The Press Box</div>
+    <h2>Real coverage. Student bylines.</h2>
+    <p class="sub">This press box belongs to Indiana's student journalists. High school newspaper departments (or school-approved student writers) file short reads, and TV sports departments (or school-approved videographers) file short videos — match highlights, interviews, or your own creative story lines. One rule for everything: <span class="k">the one-minute rule</span> — about a one-minute read, about a one-minute video. Every submission is reviewed before it's published, the wall holds the ten freshest pieces, and it turns over every few days — so keep filing.</p>
+    <div class="pb-grid">
+      <div class="cardx">
+        <span class="pb-tag">Newspaper</span>
+        <h3>Sample: The Night the HeartBreaker Went to 21–19</h3>
+        <p class="pb-byline">By A. Student, The Sample H.S. Gazette · November 2026</p>
+        <p>This is a sample card showing what a published read looks like. Your piece runs right here — about a one-minute read on the match, the team, or the moment nobody in your gym will stop talking about. Two seniors down 18–14 in the HeartBreaker. A comeback. A dogpile at the kitchen line. You were there; tell the state.</p>
+      </div>
+      <div class="cardx">
+        <span class="pb-tag tv">TV Sports</span>
+        <h3>Sample: Match Highlights — Week One</h3>
+        <p class="pb-byline">Sample H.S. TV Sports · November 2026</p>
+        <p>This is a sample card showing what a published video looks like. Your school's TV sports department cuts a highlight reel or feature of about one minute, posts it to the school's channel, and the watch button below plays it for the whole state.</p>
+        <span class="pb-watch">▶ Watch (1:00)</span>
+      </div>
+    </div>
+    <p class="pb-note">The two cards above are samples showing the format — they come down the day the first real student submissions go up.</p>
+    <p style="margin-top:28px"><a class="btn btn-gold" href="https://docs.google.com/forms/d/e/1FAIpQLSesF8Od7oAB4kWcs9lqNJf7wpEI9Ea38ntcDMR5ICi7INjK3w/viewform" target="_blank" rel="noopener">Submit Your Story</a></p>
   </div>
 </section>
 
@@ -257,6 +499,37 @@
   </div>
 </section>
 
+<section id="proshop">
+  <div class="wrap">
+    <div class="sec-eyebrow">The Pro Shop</div>
+    <h2>You save. Kids play.</h2>
+    <p class="sub">Our affiliate partners make the gear this game runs on — paddles, balls, shoes, bags, apparel. Shop their sites with an IIPA promo code: <span class="k">you get the discount</span>, and a percentage of every purchase comes back to the league at no extra cost to you — funding programs like the Every Kid Plays Fund. Gear up for the season and put a paddle in a Hoosier kid's hand with the same order.</p>
+    <div class="grid g3">
+      <div class="cardx">
+        <div class="shop-logo">SAMPLE PADDLE CO.</div>
+        <h3>Paddles</h3>
+        <p><span class="shop-save">Save 15%</span> on every paddle in their lineup — beginner to tournament play. Use this code at checkout:</p>
+        <div class="shop-code">IIPA15</div>
+        <br><span class="shop-btn">Shop Sample Paddle Co. →</span>
+      </div>
+      <div class="cardx">
+        <div class="shop-logo">SAMPLE BALL CO.</div>
+        <h3>Balls</h3>
+        <p><span class="shop-save">Save 10%</span> on the indoor balls your team practices with all season. Use this code at checkout:</p>
+        <div class="shop-code">IIPA10</div>
+        <br><span class="shop-btn">Shop Sample Ball Co. →</span>
+      </div>
+      <div class="cardx">
+        <div class="shop-logo">YOUR BRAND HERE</div>
+        <h3>Your Category</h3>
+        <p>Shoes, bags, apparel, eyewear, training aids — if Indiana's newest high school athletes use it, there's a card here for the brand that makes it.</p>
+        <br><a class="shop-btn" href="mailto:Info@IndianaHSPickleball.org?subject=Affiliate%20partnership%20inquiry">Become an Affiliate →</a>
+      </div>
+    </div>
+    <p class="shop-disclosure">The cards above are samples showing the format — real brands, codes, and links appear as affiliate partnerships sign. Affiliate disclosure: the IIPA earns a commission on purchases made using these codes and links; that income funds league operations and programs like the Every Kid Plays Fund.</p>
+  </div>
+</section>
+
 <section id="schools">
   <div class="wrap">
     <div class="sec-eyebrow">For Athletic Directors &amp; Principals</div>
@@ -264,9 +537,9 @@
     <div class="steps">
       <div class="step"><b>Start (or name) your Pickleball Club</b><p>An existing club counts; a new one is easy and we'll help you form it. Just email us and we will gladly answer all your questions or get on a call with you. Your home facility offers practice court time, coaching help, and youth programming. They are there for you. That is your home club.</p></div>
       <div class="step"><b>Certify a coach and your players</b><p>An adult coach certified by your school attends every match. Players are enrolled students, grades 9–12, certified by the school.</p></div>
-      <div class="step"><b>Register your school</b><p>Email us and we'll take it from there — home club assignment, schedule, and everything your team needs before the first serve the week of November 17.</p></div>
+      <div class="step"><b>Register your school</b><p>Fill out the quick registration form and we'll take it from there — home club assignment, schedule, and everything your team needs before the first serve the week of November 17.</p></div>
     </div>
-    <p style="margin-top:30px"><a class="btn btn-gold" href="mailto:IIPAssociation2026@gmail.com?subject=Register%20our%20school">Email Us to Register</a></p>
+    <p style="margin-top:30px"><a class="btn btn-gold" href="https://forms.gle/Hz6xKMCTQmeea3ew8" target="_blank" rel="noopener">Register Your School</a></p>
   </div>
 </section>
 
@@ -276,11 +549,18 @@
     <h2>Put your name on a first</h2>
     <p class="sub">The <a href="https://sfia.org/resources/sfia-releases-2026-pickleball-single-sport-report-team-sports-reports-to-follow/" target="_blank" rel="noopener">fastest-growing sport in America</a> is coming to Indiana's schools, and Season One partners will be part of its history forever — while funding something real: youth activity, access for every income, and a sport kids keep for life.</p>
     <div class="grid g3">
-      <div class="cardx"><h3>Title Partnership</h3><p>Name the State Championships and the perpetual championship trophy. One partner, once ever.</p></div>
-      <div class="cardx"><h3>Every Kid Plays Fund</h3><p>Underwrite hardship waivers and equipment so no school is priced out — visible, story-rich community investment.</p></div>
-      <div class="cardx"><h3>Regional &amp; Program Sponsors</h3><p>Name a region's season, or adopt a program: officials certification, coaches education, adaptive pickleball, broadcast honors.</p></div>
+      <div class="cardx"><h3>Title Sponsor</h3><p>The once-in-history position. Your name on the inaugural Indiana High School Team Pickleball State Championships and on the perpetual championship trophy every team chases from now on. One partner, once ever. First-mover benefits.</p></div>
+      <div class="cardx"><h3>Presenting Sponsor</h3><p>Season One, presented by you. Your name rides with the league itself — on schedules, standings, website, socials, and announcements statewide, every match week across all indoor home clubs, from the first serve in November to championship point in February.</p></div>
+      <div class="cardx"><h3>Platinum Sponsor</h3><p>Starts at $7,500. Top-tier statewide and southwest Ohio recognition: prominent placement on the website, regular season materials, and championship weekend — the brands making Indiana's newest high school sport possible.</p></div>
+      <div class="cardx"><h3>Gold Sponsor</h3><p>Starts at $3,000. Front-line visibility all season, with your name featured across league communications and at regional championship events statewide and into Ohio.</p></div>
+      <div class="cardx"><h3>Silver Sponsor</h3><p>Starts at $1,250. For businesses that want more than a name listing but think in four figures. This supports a ton of initiatives for the youth involved in this historic program.</p></div>
+      <div class="cardx"><h3>Bronze Sponsor</h3><p>Starts at $500. An entry point for local businesses and individuals alike: a place on the roll of Season One backers who helped launch a first in Indiana high school sports.</p></div>
+    <div class="cardx"><h3>Founding Friends</h3><p>All contributions matter — give whatever amount feels right. For everyone who simply wants to see a historic Season One happen. Every Founding Friend’s name goes on the permanent roll of those who were here first.</p></div>
+      <div class="cardx"><h3>Every Kid Plays Fund</h3><p>Underwrites hardship waivers and equipment expenses so cost never keeps a school or a student off the court. The most story-rich investment in the league — and the one families remember. Donors are notified every time the fund puts a school or student on the court, and every thank-you that comes back is shared with the contributors who made it happen.</p></div>
+      <div class="cardx"><h3>Sponsor a High School</h3><p>Give directly to the school you care about. Whether you're an alum, a teacher, a parent, or a neighbor, your gift is earmarked for that school's pickleball club — put toward whatever the club needs most, or toward the purpose you name — and delivered to the school as funds or as club credits for future expenses.</p></div>
+      <div class="cardx"><h3>Sponsor an Outreach Program</h3><p>Put your name on a program that grows the game — and the students: referee certification, coaches education, adaptive pickleball innovation, broadcast honors, and the health of the communities these schools call home. Indiana’s best and brightest will be tested on and off the court. As each program is announced, it will appear here with a way to learn more and contribute to its success.</p></div>
     </div>
-    <p style="margin-top:28px"><a class="btn btn-gold" href="mailto:IIPAssociation2026@gmail.com?subject=Partnership%20inquiry">Start the Conversation</a></p>
+    <p style="margin-top:28px"><a class="btn btn-gold" href="mailto:Info@IndianaHSPickleball.org?subject=Partnership%20inquiry">Start the Conversation</a></p>
   </div>
 </section>
 
@@ -294,34 +574,55 @@
         <div class="avatar" aria-hidden="true">JR</div>
         <h3>J.R. Billman</h3>
         <div class="role">Founder &amp; CEO · Chairman of the Board</div>
+        <p>J.R. Billman is a hospital-based Clinical Staff Pharmacist in Avon, Indiana — a Hoosier born in Rochester and raised in Rushville. A past member of the Indiana State Board of Pharmacy, elected by his fellow Board members to serve as its President, he is a graduate of the University of New Mexico College of Pharmacy, where he received the Eli Lilly Award for Leadership, Scholarship, and Ethics. A former collegiate tennis player and serial entrepreneur, he picked up pickleball in November 2025 and saw what the sport was missing: the visible pathway every kid understands — a high school team to make, a state title to chase, a next level to dream about. He founded the IIPA to build that pathway and put a paddle in the hand of every Hoosier kid who wants one — and, teacher and coach by nature, to make every pickleball court a classroom where lessons bigger than the game are taught.</p>
+        <p class="bio-note">Photo coming soon.</p>
+      </div>
+      <div class="cardx">
+        <div class="avatar" aria-hidden="true">AB</div>
+        <h3>Austin M. Bowling</h3>
+        <div class="role">Vice-President, Secretary &amp; Chief Technology Officer · Vice-Chairman of&nbsp;the&nbsp;Board</div>
         <p class="bio-note">Bio and photo coming soon.</p>
       </div>
       <div class="cardx">
         <div class="avatar" aria-hidden="true">RF</div>
         <h3>Richard X. Fingerbutt</h3>
-        <div class="role">Vice-President &amp; Treasurer · Vice-Chairman</div>
-        <p class="bio-note">Bio and photo coming soon.</p>
-      </div>
-      <div class="cardx">
-        <div class="avatar" aria-hidden="true">AB</div>
-        <h3>Austin M. Bowling</h3>
-        <div class="role">Secretary &amp; Chief Compliance Officer · Board Secretary</div>
+        <div class="role">Treasurer &amp; Chief Compliance Officer · Board Secretary</div>
         <p class="bio-note">Bio and photo coming soon.</p>
       </div>
     </div>
     <div class="gov">The Indiana Interscholastic Pickleball Association, Ltd. was incorporated as an Indiana nonprofit corporation, with Articles of Incorporation approved by the Indiana Secretary of State on <b>July 13, 2026</b>. Federal recognition as a 501(c)(3) tax-exempt organization is currently underway with the IRS.
       <br><br>With seven projects currently in the master plan, the first two — The Indiana High School Team Pickleball Club League and The Indiana High School Team Pickleball State Championships — will be our flagship programs. And it's not just going to be about the competition, although that is inevitable. Yes, we will name, with our Indoor Club partners around the great Hoosier state, 1st, 2nd, 3rd Team and Honorable Mention All-State players. Oh yes, there will be an Indiana All-Star Team that will have a special summer event planned that will be an opportunity of a lifetime. And of course — of course — there will be named the first ever Mr. Pickleball and Miss Pickleball in the state of Indiana. This just goes without saying.
-      <br><br>But just as important as that, several amazing outreach programs, separate from the competition, will be included in the program. You will be amazed at how we will challenge the best and brightest in Hoosier High School Pickleball Clubs around the state to use their ingenuity and innovation to create something that has never been tried before. <b>"Kids Playing for Kids."</b>
-      <br><br><b>Welcome aboard. We hope you enjoy the ride.</b></div>
+      <br><br>But just as important as that, several amazing outreach programs, separate from the competition, will be included in the program. You will be amazed at how we will challenge the best and brightest in Hoosier High School Pickleball Clubs around the state to use their ingenuity and innovation to create something that has never been tried before.<div style="text-align:center;margin:16px 0"><b>"Kids Playing for Kids."</b></div><div style="text-align:center"><b>Welcome aboard. We hope you enjoy the ride.</b></div></div>
   </div>
 </section>
 
+<div class="affil">
+  <div class="wrap">
+    <span class="sec-eyebrow">Official Partners</span>
+    <div class="affil-grid">
+      <div class="affil-slot">
+        <div class="affil-logo">YOUR BRAND HERE</div>
+        <div class="affil-cap"><b>Official Ball</b> of the Indiana High School Team Pickleball Club League &amp; State Championships</div>
+      </div>
+      <div class="affil-slot">
+        <div class="affil-logo">YOUR BRAND HERE</div>
+        <div class="affil-cap"><b>Official Paddle</b> of the Indiana High School Team Pickleball Club League &amp; State Championships</div>
+      </div>
+      <div class="affil-slot">
+        <div class="affil-logo">YOUR BRAND HERE</div>
+        <div class="affil-cap"><b>Official [Your Category]</b> — every designation is exclusive, and there is only one of each</div>
+      </div>
+    </div>
+    <p class="affil-note">Placeholders shown — each designation becomes a partner's the day they sign. <a href="mailto:Info@IndianaHSPickleball.org?subject=Official%20Partner%20inquiry">Claim a category.</a></p>
+  </div>
+</div>
+
 <footer>
   <div class="wrap">
-    <div class="contact-line"><b>Indiana High School Team Pickleball</b> — the official Club League &amp; State Championships of the <b>Indiana Interscholastic Pickleball Association, Ltd.</b>, an Indiana nonprofit corporation (IRS 501(c)(3) application in process).</div>
-    <div>The Association operates under adopted bylaws with conflict-of-interest, whistleblower-protection, and document-retention policies. <b>Governance documents are available on request.</b></div>
-    <div>Contact: <a href="mailto:IIPAssociation2026@gmail.com">IIPAssociation2026@gmail.com</a> &nbsp;·&nbsp; J.R. Billman, Founder &amp; CEO</div>
-    <div>Connect. Compete. Have Fun. — sportsmanship and fair play is at the heart of everything we do.</div>
+    <div class="contact-line"><b>Indiana High School Team Pickleball</b> — the official Club League &amp; State Championships of the <b class="org-name">Indiana Interscholastic Pickleball Association, Ltd.</b>, an Indiana nonprofit corporation (IRS 501(c)(3) application in process).</div>
+    <div>The Association operates under adopted bylaws with conflict-of-interest, whistleblower-protection, and document-retention policies.<br><b>Governance documents are available on request.</b></div>
+    <div style="margin-top:.5em">Contact: <a href="mailto:Info@IndianaHSPickleball.org">Info@IndianaHSPickleball.org</a><br><br>J.R. Billman, Founder &amp; CEO<br>Indiana Interscholastic Pickleball Association, Ltd.<br>P.O. Box 34154<br>Indianapolis, IN 46234</div>
+    <div><br>Connect. Compete. Have Fun. — sportsmanship and fair play is at the heart of everything we do.</div>
   </div>
 </footer>
 </body>
