@@ -1111,7 +1111,7 @@
   "city": "Fort Wayne",
   "zip": "46814",
   "region": 4,
-  "home_club": "Power Courts - Ft. Wayne",
+  "home_club": "Wildwood - Ft. Wayne",
   "lat": 41.05088,
   "lon": -85.29923
  },
@@ -1123,7 +1123,7 @@
   "city": "Fort Wayne",
   "zip": "46825",
   "region": 4,
-  "home_club": "Power Courts - Ft. Wayne",
+  "home_club": "Wildwood - Ft. Wayne",
   "lat": 41.15241,
   "lon": -85.12709
  },
@@ -1135,7 +1135,7 @@
   "city": "Fort Wayne",
   "zip": "46804",
   "region": 4,
-  "home_club": "Power Courts - Ft. Wayne",
+  "home_club": "Wildwood - Ft. Wayne",
   "lat": 41.05322,
   "lon": -85.24216
  },
@@ -1147,7 +1147,7 @@
   "city": "Fort Wayne",
   "zip": "46825",
   "region": 4,
-  "home_club": "Power Courts - Ft. Wayne",
+  "home_club": "Wildwood - Ft. Wayne",
   "lat": 41.15997,
   "lon": -85.1147
  },
@@ -1159,7 +1159,7 @@
   "city": "Fort Wayne",
   "zip": "46818",
   "region": 4,
-  "home_club": "Power Courts - Ft. Wayne",
+  "home_club": "Wildwood - Ft. Wayne",
   "lat": 41.15586,
   "lon": -85.25301
  },
@@ -1171,7 +1171,7 @@
   "city": "Fort Wayne",
   "zip": "46805",
   "region": 4,
-  "home_club": "Power Courts - Ft. Wayne",
+  "home_club": "Wildwood - Ft. Wayne",
   "lat": 41.10011,
   "lon": -85.11771
  },
@@ -1183,7 +1183,7 @@
   "city": "Fort Wayne",
   "zip": "46815",
   "region": 4,
-  "home_club": "Power Courts - Ft. Wayne",
+  "home_club": "Wildwood - Ft. Wayne",
   "lat": 41.10273,
   "lon": -85.05863
  },
@@ -1195,7 +1195,7 @@
   "city": "Fort Wayne",
   "zip": "46815",
   "region": 4,
-  "home_club": "Power Courts - Ft. Wayne",
+  "home_club": "Wildwood - Ft. Wayne",
   "lat": 41.09256,
   "lon": -85.06707
  },
@@ -1207,7 +1207,7 @@
   "city": "Fort Wayne",
   "zip": "46805",
   "region": 4,
-  "home_club": "Power Courts - Ft. Wayne",
+  "home_club": "Wildwood - Ft. Wayne",
   "lat": 41.10441,
   "lon": -85.10284
  },
@@ -1219,7 +1219,7 @@
   "city": "Fort Wayne",
   "zip": "46807",
   "region": 4,
-  "home_club": "Power Courts - Ft. Wayne",
+  "home_club": "Wildwood - Ft. Wayne",
   "lat": 41.04489,
   "lon": -85.1476
  },
@@ -1231,7 +1231,7 @@
   "city": "Fort Wayne",
   "zip": "46816",
   "region": 4,
-  "home_club": "Power Courts - Ft. Wayne",
+  "home_club": "Wildwood - Ft. Wayne",
   "lat": 41.00078,
   "lon": -85.03618
  },
@@ -1243,7 +1243,7 @@
   "city": "Fort Wayne",
   "zip": "46819",
   "region": 4,
-  "home_club": "Power Courts - Ft. Wayne",
+  "home_club": "Wildwood - Ft. Wayne",
   "lat": 40.97459,
   "lon": -85.13359
  },
@@ -1254,8 +1254,8 @@
   "mascot": "Giants",
   "city": "Marion",
   "zip": "46953",
-  "region": 4,
-  "home_club": "Power Courts - Ft. Wayne",
+  "region": 5,
+  "home_club": "First Serve - Muncie",
   "lat": 40.51942,
   "lon": -85.64334
  },
@@ -1267,7 +1267,7 @@
   "city": "North Manchester",
   "zip": "46962",
   "region": 4,
-  "home_club": "Power Courts - Ft. Wayne",
+  "home_club": "Wildwood - Ft. Wayne",
   "lat": 40.98821,
   "lon": -85.76852
  },
@@ -1279,7 +1279,7 @@
   "city": "Huntington",
   "zip": "46750",
   "region": 4,
-  "home_club": "Power Courts - Ft. Wayne",
+  "home_club": "Wildwood - Ft. Wayne",
   "lat": 40.87846,
   "lon": -85.4964
  },
@@ -1291,7 +1291,7 @@
   "city": "Leo",
   "zip": "46765",
   "region": 4,
-  "home_club": "Power Courts - Ft. Wayne",
+  "home_club": "Wildwood - Ft. Wayne",
   "lat": 41.23245,
   "lon": -85.04875
  },
@@ -1303,7 +1303,7 @@
   "city": "Ossian",
   "zip": "46777",
   "region": 4,
-  "home_club": "Power Courts - Ft. Wayne",
+  "home_club": "Wildwood - Ft. Wayne",
   "lat": 40.86914,
   "lon": -85.14758
  },
@@ -1314,8 +1314,8 @@
   "mascot": "Tigers",
   "city": "Bluffton",
   "zip": "46714",
-  "region": 4,
-  "home_club": "Power Courts - Ft. Wayne",
+  "region": 5,
+  "home_club": "First Serve - Muncie",
   "lat": 40.72279,
   "lon": -85.17665
  },
@@ -1326,8 +1326,8 @@
   "mascot": "Braves",
   "city": "Decatur",
   "zip": "46733",
-  "region": 4,
-  "home_club": "Power Courts - Ft. Wayne",
+  "region": 5,
+  "home_club": "First Serve - Muncie",
   "lat": 40.82823,
   "lon": -84.94004
  },
@@ -1338,8 +1338,8 @@
   "mascot": "Flying Jets",
   "city": "Monroe",
   "zip": "46772",
-  "region": 4,
-  "home_club": "Power Courts - Ft. Wayne",
+  "region": 5,
+  "home_club": "First Serve - Muncie",
   "lat": 40.72151,
   "lon": -84.91372
  },
@@ -1350,8 +1350,8 @@
   "mascot": "Golden Eagles",
   "city": "Converse",
   "zip": "46919",
-  "region": 4,
-  "home_club": "Power Courts - Ft. Wayne",
+  "region": 5,
+  "home_club": "First Serve - Muncie",
   "lat": 40.59418,
   "lon": -85.86964
  },
@@ -1362,8 +1362,8 @@
   "mascot": "Panthers",
   "city": "Marion",
   "zip": "46953",
-  "region": 4,
-  "home_club": "Power Courts - Ft. Wayne",
+  "region": 5,
+  "home_club": "First Serve - Muncie",
   "lat": 40.52486,
   "lon": -85.65741
  },
@@ -1374,8 +1374,8 @@
   "mascot": "Apaches",
   "city": "Wabash",
   "zip": "46992",
-  "region": 4,
-  "home_club": "Power Courts - Ft. Wayne",
+  "region": 5,
+  "home_club": "First Serve - Muncie",
   "lat": 40.7873,
   "lon": -85.82643
  },
@@ -1386,8 +1386,8 @@
   "mascot": "Norsemen",
   "city": "Wabash",
   "zip": "46992",
-  "region": 4,
-  "home_club": "Power Courts - Ft. Wayne",
+  "region": 5,
+  "home_club": "First Serve - Muncie",
   "lat": 40.7918,
   "lon": -85.84113
  },
@@ -1398,8 +1398,8 @@
   "mascot": "Indians",
   "city": "Gas City",
   "zip": "46933",
-  "region": 4,
-  "home_club": "Power Courts - Ft. Wayne",
+  "region": 5,
+  "home_club": "First Serve - Muncie",
   "lat": 40.47985,
   "lon": -85.58229
  },
@@ -1410,8 +1410,8 @@
   "mascot": "Eagles",
   "city": "Fremont",
   "zip": "46737",
-  "region": 4,
-  "home_club": "Power Courts - Ft. Wayne",
+  "region": 3,
+  "home_club": "Pickle Haus - Middlebury",
   "lat": 41.71928,
   "lon": -84.92983
  },
@@ -1422,8 +1422,8 @@
   "mascot": "Cougars",
   "city": "Winona Lake",
   "zip": "46590",
-  "region": 4,
-  "home_club": "Power Courts - Ft. Wayne",
+  "region": 3,
+  "home_club": "Pickle Haus - Middlebury",
   "lat": 41.21684,
   "lon": -85.81268
  },
@@ -1434,8 +1434,8 @@
   "mascot": "Panthers",
   "city": "Auburn",
   "zip": "46706",
-  "region": 4,
-  "home_club": "Power Courts - Ft. Wayne",
+  "region": 3,
+  "home_club": "Pickle Haus - Middlebury",
   "lat": 41.34159,
   "lon": -85.03266
  },
@@ -1446,8 +1446,8 @@
   "mascot": "Hornets",
   "city": "Angola",
   "zip": "46703",
-  "region": 4,
-  "home_club": "Power Courts - Ft. Wayne",
+  "region": 3,
+  "home_club": "Pickle Haus - Middlebury",
   "lat": 41.64959,
   "lon": -85.00655
  },
@@ -1458,8 +1458,8 @@
   "mascot": "Marines",
   "city": "Hamilton",
   "zip": "46742",
-  "region": 4,
-  "home_club": "Power Courts - Ft. Wayne",
+  "region": 3,
+  "home_club": "Pickle Haus - Middlebury",
   "lat": 41.54859,
   "lon": -84.87909
  },
@@ -1471,7 +1471,7 @@
   "city": "Butler",
   "zip": "46721",
   "region": 4,
-  "home_club": "Power Courts - Ft. Wayne",
+  "home_club": "Wildwood - Ft. Wayne",
   "lat": 41.42299,
   "lon": -84.87661
  },
@@ -1483,7 +1483,7 @@
   "city": "Waterloo",
   "zip": "46793",
   "region": 4,
-  "home_club": "Power Courts - Ft. Wayne",
+  "home_club": "Wildwood - Ft. Wayne",
   "lat": 41.4524,
   "lon": -85.01527
  },
@@ -1495,7 +1495,7 @@
   "city": "Garrett",
   "zip": "46738",
   "region": 4,
-  "home_club": "Power Courts - Ft. Wayne",
+  "home_club": "Wildwood - Ft. Wayne",
   "lat": 41.31891,
   "lon": -85.14887
  },
@@ -1506,8 +1506,8 @@
   "mascot": "Wildcats",
   "city": "South Whitley",
   "zip": "46787",
-  "region": 4,
-  "home_club": "Power Courts - Ft. Wayne",
+  "region": 3,
+  "home_club": "Pickle Haus - Middlebury",
   "lat": 41.06625,
   "lon": -85.61972
  },
@@ -1518,8 +1518,8 @@
   "mascot": "Knights",
   "city": "Wabash",
   "zip": "46992",
-  "region": 4,
-  "home_club": "Power Courts - Ft. Wayne",
+  "region": 5,
+  "home_club": "First Serve - Muncie",
   "lat": 40.7838,
   "lon": -85.81128
  },
@@ -1530,8 +1530,8 @@
   "mascot": "Starfires",
   "city": "Berne",
   "zip": "46711",
-  "region": 4,
-  "home_club": "Power Courts - Ft. Wayne",
+  "region": 5,
+  "home_club": "First Serve - Muncie",
   "lat": 40.66195,
   "lon": -84.92688
  },
@@ -1542,8 +1542,8 @@
   "mascot": "Raiders",
   "city": "Poneto",
   "zip": "46781",
-  "region": 4,
-  "home_club": "Power Courts - Ft. Wayne",
+  "region": 5,
+  "home_club": "First Serve - Muncie",
   "lat": 40.63238,
   "lon": -85.26889
  },
@@ -1555,7 +1555,7 @@
   "city": "Monroeville",
   "zip": "46773",
   "region": 4,
-  "home_club": "Power Courts - Ft. Wayne",
+  "home_club": "Wildwood - Ft. Wayne",
   "lat": 40.98215,
   "lon": -84.87561
  },
@@ -1567,7 +1567,7 @@
   "city": "New Haven",
   "zip": "46774",
   "region": 4,
-  "home_club": "Power Courts - Ft. Wayne",
+  "home_club": "Wildwood - Ft. Wayne",
   "lat": 41.08926,
   "lon": -84.97255
  },
@@ -1579,7 +1579,7 @@
   "city": "Woodburn",
   "zip": "46797",
   "region": 4,
-  "home_club": "Power Courts - Ft. Wayne",
+  "home_club": "Wildwood - Ft. Wayne",
   "lat": 41.1284,
   "lon": -84.85898
  },
@@ -1591,7 +1591,7 @@
   "city": "Churubusco",
   "zip": "46723",
   "region": 4,
-  "home_club": "Power Courts - Ft. Wayne",
+  "home_club": "Wildwood - Ft. Wayne",
   "lat": 41.2452,
   "lon": -85.32623
  },
@@ -1603,7 +1603,7 @@
   "city": "Fort Wayne",
   "zip": "46819",
   "region": 4,
-  "home_club": "Power Courts - Ft. Wayne",
+  "home_club": "Wildwood - Ft. Wayne",
   "lat": 40.98487,
   "lon": -85.14178
  },
@@ -1615,7 +1615,7 @@
   "city": "Columbia City",
   "zip": "46725",
   "region": 4,
-  "home_club": "Power Courts - Ft. Wayne",
+  "home_club": "Wildwood - Ft. Wayne",
   "lat": 41.14854,
   "lon": -85.47577
  },
